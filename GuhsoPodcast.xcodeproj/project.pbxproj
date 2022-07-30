@@ -30,6 +30,7 @@
 		1F7ED2CC28947EBE00ACDB57 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2CB28947EBE00ACDB57 /* CategoryButton.swift */; };
 		1F7ED2CF289490A600ACDB57 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2CE289490A600ACDB57 /* Tabs.swift */; };
 		1F7ED2D12894986200ACDB57 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D02894986200ACDB57 /* IconButton.swift */; };
+		1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		1F7ED2CB28947EBE00ACDB57 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		1F7ED2CE289490A600ACDB57 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		1F7ED2D02894986200ACDB57 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavButton2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				1F7ED2C328945DF500ACDB57 /* SettingsButton.swift */,
 				1F7ED2CB28947EBE00ACDB57 /* CategoryButton.swift */,
 				1F7ED2D02894986200ACDB57 /* IconButton.swift */,
+				1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				1F7ED2C428945DF500ACDB57 /* SettingsButton.swift in Sources */,
 				1F7ED2AE289446AC00ACDB57 /* ProfileView.swift in Sources */,
 				1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */,
+				1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */,
 				1F7ED2C228945D0E00ACDB57 /* CartButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
