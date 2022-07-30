@@ -31,6 +31,8 @@
 		1F7ED2CF289490A600ACDB57 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2CE289490A600ACDB57 /* Tabs.swift */; };
 		1F7ED2D12894986200ACDB57 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D02894986200ACDB57 /* IconButton.swift */; };
 		1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */; };
+		1F7ED2D52894BF8900ACDB57 /* RecentShowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */; };
+		1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		1F7ED2CE289490A600ACDB57 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		1F7ED2D02894986200ACDB57 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavButton2.swift; sourceTree = "<group>"; };
+		1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentShowCard.swift; sourceTree = "<group>"; };
+		1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				1F7ED2B828944F8900ACDB57 /* EpisodeCard.swift */,
+				1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */,
+				1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				1F7ED2CC28947EBE00ACDB57 /* CategoryButton.swift in Sources */,
 				1F7ED2CF289490A600ACDB57 /* Tabs.swift in Sources */,
 				1F7ED2BC28945C6100ACDB57 /* PlayerSheet.swift in Sources */,
+				1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */,
 				1F7ED2CA28945F7A00ACDB57 /* SettingsView.swift in Sources */,
 				1F7ED2B12894473C00ACDB57 /* LoginView.swift in Sources */,
 				1F7ED2B528944ADF00ACDB57 /* PlayButton.swift in Sources */,
@@ -300,6 +307,7 @@
 				1F7ED2B32894490C00ACDB57 /* FavButton.swift in Sources */,
 				1F7ED2952894449700ACDB57 /* ContentView.swift in Sources */,
 				1F7ED2B728944DAC00ACDB57 /* ProfileButton.swift in Sources */,
+				1F7ED2D52894BF8900ACDB57 /* RecentShowCard.swift in Sources */,
 				1F7ED2C728945F1000ACDB57 /* MainView.swift in Sources */,
 				1F7ED2AC2894469E00ACDB57 /* HomeView.swift in Sources */,
 				1F7ED2C428945DF500ACDB57 /* SettingsButton.swift in Sources */,
