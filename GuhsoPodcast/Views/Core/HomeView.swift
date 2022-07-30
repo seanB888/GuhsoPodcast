@@ -12,8 +12,6 @@ struct HomeView: View {
         UITableView.appearance().backgroundColor = UIColor.red
     }
     
-    @State var value: CGFloat = 85
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -56,6 +54,9 @@ struct HomeView_Previews: PreviewProvider {
 
 // MARK: -RecentEpisode Code
 struct RecentEpisodes: View {
+    
+    @State var showSheet = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -71,6 +72,11 @@ struct RecentEpisodes: View {
             TabView {
                 ForEach(0 ..< 5) { item in
                     EpisodeCard()
+                        .fullScreenCover(isPresented: $showSheet, content: { PlayerSheet() })
+                        .onTapGesture {
+                            self.showSheet = true
+                        }
+                    
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .automatic))

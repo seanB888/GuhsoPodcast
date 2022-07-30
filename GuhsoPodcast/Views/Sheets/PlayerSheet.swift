@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct PlayerSheet: View {
+    @Environment (\.presentationMode) var presentationMode
     @State private var progress = 0.75
     
     var body: some View {
         VStack {
             HStack {
-                IconButton(icon: "xmark.circle.fill", action: {})
+                IconButton(icon: "xmark.circle.fill", action: { self.presentationMode.wrappedValue.dismiss() })
             }
             .offset(x: 23, y: 40)
             .frame(maxWidth: .infinity, alignment: .topLeading)
