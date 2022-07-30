@@ -33,6 +33,13 @@
 		1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */; };
 		1F7ED2D52894BF8900ACDB57 /* RecentShowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */; };
 		1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */; };
+		1F83BE82289564870042DBDA /* DirectoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE81289564870042DBDA /* DirectoryCard.swift */; };
+		1F83BE86289567A40042DBDA /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE85289567A40042DBDA /* CustomCorners.swift */; };
+		1F83BE882895684B0042DBDA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE872895684B0042DBDA /* Color.swift */; };
+		1F83BE8A289569660042DBDA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE89289569660042DBDA /* Date.swift */; };
+		1F83BE8C28956A890042DBDA /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8B28956A890042DBDA /* Double.swift */; };
+		1F83BE8E289579870042DBDA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8D289579870042DBDA /* View.swift */; };
+		1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,13 @@
 		1F7ED2D22894B62B00ACDB57 /* FavButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavButton2.swift; sourceTree = "<group>"; };
 		1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentShowCard.swift; sourceTree = "<group>"; };
 		1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
+		1F83BE81289564870042DBDA /* DirectoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryCard.swift; sourceTree = "<group>"; };
+		1F83BE85289567A40042DBDA /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		1F83BE872895684B0042DBDA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1F83BE89289569660042DBDA /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		1F83BE8B28956A890042DBDA /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		1F83BE8D289579870042DBDA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,7 @@
 		1F7ED2912894449700ACDB57 /* GuhsoPodcast */ = {
 			isa = PBXGroup;
 			children = (
+				1F83BE83289567780042DBDA /* Resources */,
 				1F7ED2A72894465B00ACDB57 /* Components */,
 				1F7ED2A62894465100ACDB57 /* Managers */,
 				1F7ED2A52894464700ACDB57 /* Views */,
@@ -177,6 +192,8 @@
 				1F7ED2B828944F8900ACDB57 /* EpisodeCard.swift */,
 				1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */,
 				1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */,
+				1F83BE81289564870042DBDA /* DirectoryCard.swift */,
+				1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -219,6 +236,26 @@
 				1F7ED2CE289490A600ACDB57 /* Tabs.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		1F83BE83289567780042DBDA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F83BE85289567A40042DBDA /* CustomCorners.swift */,
+				1F83BE84289567810042DBDA /* Extensions */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1F83BE84289567810042DBDA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F83BE872895684B0042DBDA /* Color.swift */,
+				1F83BE89289569660042DBDA /* Date.swift */,
+				1F83BE8B28956A890042DBDA /* Double.swift */,
+				1F83BE8D289579870042DBDA /* View.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,12 +330,14 @@
 			files = (
 				1F7ED29C2894449900ACDB57 /* Persistence.swift in Sources */,
 				1F7ED2B928944F8900ACDB57 /* EpisodeCard.swift in Sources */,
+				1F83BE8E289579870042DBDA /* View.swift in Sources */,
 				1F7ED2CC28947EBE00ACDB57 /* CategoryButton.swift in Sources */,
 				1F7ED2CF289490A600ACDB57 /* Tabs.swift in Sources */,
 				1F7ED2BC28945C6100ACDB57 /* PlayerSheet.swift in Sources */,
 				1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */,
 				1F7ED2CA28945F7A00ACDB57 /* SettingsView.swift in Sources */,
 				1F7ED2B12894473C00ACDB57 /* LoginView.swift in Sources */,
+				1F83BE82289564870042DBDA /* DirectoryCard.swift in Sources */,
 				1F7ED2B528944ADF00ACDB57 /* PlayButton.swift in Sources */,
 				1F7ED2BE28945C9B00ACDB57 /* CategorySection.swift in Sources */,
 				1F7ED2D12894986200ACDB57 /* IconButton.swift in Sources */,
@@ -307,13 +346,18 @@
 				1F7ED2B32894490C00ACDB57 /* FavButton.swift in Sources */,
 				1F7ED2952894449700ACDB57 /* ContentView.swift in Sources */,
 				1F7ED2B728944DAC00ACDB57 /* ProfileButton.swift in Sources */,
+				1F83BE882895684B0042DBDA /* Color.swift in Sources */,
 				1F7ED2D52894BF8900ACDB57 /* RecentShowCard.swift in Sources */,
 				1F7ED2C728945F1000ACDB57 /* MainView.swift in Sources */,
 				1F7ED2AC2894469E00ACDB57 /* HomeView.swift in Sources */,
 				1F7ED2C428945DF500ACDB57 /* SettingsButton.swift in Sources */,
+				1F83BE86289567A40042DBDA /* CustomCorners.swift in Sources */,
+				1F83BE8A289569660042DBDA /* Date.swift in Sources */,
 				1F7ED2AE289446AC00ACDB57 /* ProfileView.swift in Sources */,
 				1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */,
 				1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */,
+				1F83BE8C28956A890042DBDA /* Double.swift in Sources */,
+				1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */,
 				1F7ED2C228945D0E00ACDB57 /* CartButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,18 +9,20 @@ import SwiftUI
 
 struct PlayButton: View {
     @State private var isplaying = false
+    @State var action: () -> Void
     
     var body: some View {
         Button {
             //
             isplaying.toggle()
+            action()
         } label: {
             Image(systemName: isplaying ? "pause.fill" : "play.fill")
                 .font(.largeTitle)
-                .foregroundColor(Color("Accent4"))
+                .foregroundColor(Color.theme.brown)
         }
         .padding()
-        .background(Color("Brand"))
+        .background(Color.theme.brand)
         .clipShape(Circle())
 
     }
@@ -28,6 +30,6 @@ struct PlayButton: View {
 
 struct PlayButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlayButton()
+        PlayButton(action: {})
     }
 }

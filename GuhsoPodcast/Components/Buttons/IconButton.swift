@@ -17,7 +17,7 @@ struct IconButton: View {
         } label: {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundColor(Color("Brand"))
+                .foregroundColor(Color.theme.brand)
         }
 
     }

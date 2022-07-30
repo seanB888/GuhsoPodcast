@@ -11,8 +11,8 @@ struct SettingsButton: View {
     var body: some View {
         NavigationLink (destination: { SettingsView() }) {
             Image(systemName: "ellipsis")
-                .foregroundColor(Color("Brand"))
-                .font(.title2)
+                .foregroundColor(Color.theme.brand)
+                .font(.title3)
                 .rotationEffect(.degrees(90))
             
         }

@@ -10,16 +10,22 @@ import SwiftUI
 struct PlayerSheet: View {
     @Environment (\.presentationMode) var presentationMode
     @State private var progress = 0.75
+    // Volume testing...
+    @State var volume: CGFloat = 0.4
     
     var body: some View {
         VStack {
+            // Close button
             HStack {
                 IconButton(icon: "xmark.circle.fill", action: { self.presentationMode.wrappedValue.dismiss() })
             }
             .offset(x: 23, y: 40)
             .frame(maxWidth: .infinity, alignment: .topLeading)
             VStack {
-                
+                Image("logoblack")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 330)
                 VStack(alignment: .leading) {
                     Text("How To Study")
                         .font(.title)
@@ -33,17 +39,17 @@ struct PlayerSheet: View {
                     VStack {
                         HStack {
                             ProgressView(value: progress)
-                                .accentColor(Color("Brand"))
+                                .accentColor(Color.theme.brand)
                             
                         }
                         HStack {
                             Text("0:00")
                                 .font(.caption2)
-                                .foregroundColor(Color("Brand"))
+                                .foregroundColor(Color.theme.brand)
                             Spacer()
                             Text("0:00")
                                 .font(.caption2)
-                                .foregroundColor(Color("Brand"))
+                                .foregroundColor(Color.theme.brand)
                             
                         }
                     }
@@ -52,7 +58,7 @@ struct PlayerSheet: View {
                 }
                 .frame(maxHeight: .infinity, alignment: .bottomLeading)
                 .padding(.horizontal, 25)
-                .foregroundColor(Color("Brand"))
+                .foregroundColor(Color.theme.brand)
                 
             }
             
@@ -74,7 +80,7 @@ struct PlayerSheet: View {
                     Text("Episode Notes")
                         .font(.title2)
                         .fontWeight(.heavy)
-                        .foregroundColor(Color("Brand"))
+                        .foregroundColor(Color.theme.brand)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 25)
@@ -85,7 +91,7 @@ struct PlayerSheet: View {
                 VStack {
                     ScrollView(showsIndicators: false) {
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-                            .foregroundColor(Color("Accent1"))
+                            .foregroundColor(Color.theme.accent)
                             .font(.body)
                     }
                 }
@@ -109,9 +115,9 @@ struct UIArea: View {
     var body: some View {
         HStack {
             Text("1x")
-                .foregroundColor(Color("Brand"))
+                .foregroundColor(Color.theme.brand)
             Spacer()
-            FavButton2()
+            FavButton2(action: {})
             Spacer()
             // Share button
             IconButton(icon: "ellipsis", action: {})
@@ -124,19 +130,41 @@ struct UIArea: View {
 
 struct VolumeSection: View {
     @State var volumProgress = 0.75
+    @State var volume: CGFloat = 0.4
     
     var body: some View {
         HStack {
             // Turn volume down
-            IconButton(icon: "speaker.fill", action: {})
+            IconButton(icon: "speaker.wave.1.fill", action: {
+                // to decrease the volume...
+                volume = volume - 0.1 > 0 ? volume - 0.1 : 0
+            })
             Spacer()
             
             // Volume progress bar
-            ProgressView(value: volumProgress)
-                .accentColor(Color("Brand"))
+            GeometryReader { proxy in
+                let width = proxy.frame(in: .global).width
+                let progress = width * volume
+                
+                ZStack(alignment: .leading) {
+                    // background color...
+                    Capsule()
+                        .fill(Color.gray.opacity(0.2))
+                        .frame(height: 4)
+                    // foreground color...
+                    Capsule()
+                        .fill(Color.theme.brand)
+                        .frame(width: progress, height: 4)
+                }
+                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .center)
+            }
+            .padding(.horizontal, getRec().width < 750 ? 15 : 20)
             
             // Turn Volume up
-            IconButton(icon: "speaker.wave.3.fill", action: {})
+            IconButton(icon: "speaker.wave.3.fill", action: {
+                // increase volume...
+                volume = volume + 0.1 < 1.0 ? volume + 0.1 : 1
+            })
         }
         .padding(.horizontal, 25)
         .frame(maxWidth: .infinity)
@@ -155,7 +183,7 @@ struct PlayerControl: View {
             Spacer()
             
             // Play button
-            PlayButton()
+            PlayButton(action: {})
             Spacer()
             
             // Skip foward 10 sec.
@@ -176,7 +204,7 @@ struct CustomDivider: View {
     var body: some View {
         Capsule()
             .frame(height: size)
-            .foregroundColor(Color("Accent1"))
+            .foregroundColor(Color.theme.accent)
             .padding(.horizontal, 25)
     }
 }

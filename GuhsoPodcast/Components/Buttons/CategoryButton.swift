@@ -10,12 +10,12 @@ import SwiftUI
 struct CategoryButton: View {
     var body: some View {
         Text("Fashion")
-            .foregroundColor(Color("Brand"))
+            .foregroundColor(Color.theme.brand)
             .padding(.vertical, 5)
             .padding(.horizontal, 20)
             .background{
                 Capsule()
-                    .fill(Color("Accent2"))
+                    .fill(Color.theme.secondaryColor)
             }
     }
 }

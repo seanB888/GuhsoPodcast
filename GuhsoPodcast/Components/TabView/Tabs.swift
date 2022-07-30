@@ -10,28 +10,24 @@ import SwiftUI
 struct Tabs: View {
     var body: some View {
         TabView {
-            VStack {
-                HomeView()
-            }
-            .tabItem({TabLable(icon: "house", text: "Home")})
-            .tag(1)
-            VStack {
-                CategorySection()
-            }
-            .tabItem({TabLable(icon: "rectangle.3.group", text: "Explore")})
-            .tag(2)
-            VStack {
-                DirectoryView()
-            }
-            .tabItem({TabLable(icon: "book.fill", text: "Directory")})
-            .tag(3)
-            VStack {
-                ProfileView()
-            }
-            .tabItem({TabLable(icon: "person", text: "Profile")})
-            .tag(4)
+            HomeView()
+                .tabItem({TabLable(icon: "house", text: "Home")})
+                .tag(1)
+            
+            CategorySection()
+                .badge(2)
+                .tabItem({TabLable(icon: "rectangle.3.group", text: "Explore")})
+                .tag(2)
+            
+            DirectoryView()
+                .tabItem({TabLable(icon: "book.fill", text: "Directory")})
+                .tag(3)
+            
+            ProfileView()
+                .tabItem({TabLable(icon: "person", text: "Profile")})
+                .tag(4)
         }
-        .accentColor(Color("Brand"))
+        .accentColor(Color.theme.brand)
     }
     
     struct TabLable: View {

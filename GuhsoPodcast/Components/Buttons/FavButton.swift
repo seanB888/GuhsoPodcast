@@ -17,10 +17,10 @@ struct FavButton: View {
         } label: {
             Image(systemName: isFav ? "heart.fill" : "heart")
                 .font(.title2)
-                .foregroundColor(Color("Brand"))
+                .foregroundColor(Color.theme.brand)
         }
         .padding(10)
-        .background(Color("Accent1").opacity(0.2))
+        .background(Color.theme.secondaryColor.opacity(0.2))
         .clipShape(Circle())
 
     }

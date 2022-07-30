@@ -12,8 +12,9 @@ struct CartButton: View {
     var body: some View {
         NavigationLink(destination: { MainView() }) {
             Image(systemName: "tshirt")
+                .badge(2)
                 .font(.title3)
-                .foregroundColor(Color("Brand"))
+                .foregroundColor(Color.theme.brand)
         }
 
     }

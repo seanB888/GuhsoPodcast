@@ -15,11 +15,11 @@ struct ProfileButton: View {
         NavigationLink(destination: {ProfileView()}) {
             VStack {
                 Image(systemName: "person.circle")
-                    .font(.title2)
-                    .foregroundColor(Color("Brand"))
+                    .font(.title3)
+                    .foregroundColor(Color.theme.brand)
             }
             .frame(width: 45, height: 45)
-            .background(Color("Accent2").opacity(0.7))
+            .background(Color.theme.secondaryColor.opacity(0.7))
         .clipShape(RoundedRectangle(cornerRadius: 15))
         }
     }
