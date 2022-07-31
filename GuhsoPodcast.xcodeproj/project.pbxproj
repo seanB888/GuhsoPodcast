@@ -40,6 +40,7 @@
 		1F83BE8C28956A890042DBDA /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8B28956A890042DBDA /* Double.swift */; };
 		1F83BE8E289579870042DBDA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8D289579870042DBDA /* View.swift */; };
 		1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */; };
+		1FF57D0D28971506003EF77E /* EpisodeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0C28971506003EF77E /* EpisodeSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		1F83BE8B28956A890042DBDA /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1F83BE8D289579870042DBDA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRow.swift; sourceTree = "<group>"; };
+		1FF57D0C28971506003EF77E /* EpisodeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				1F7ED2BB28945C6100ACDB57 /* PlayerSheet.swift */,
+				1FF57D0C28971506003EF77E /* EpisodeSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				1F7ED2D12894986200ACDB57 /* IconButton.swift in Sources */,
 				1F7ED2C028945CB600ACDB57 /* DirectoryView.swift in Sources */,
 				1F7ED29F2894449900ACDB57 /* GuhsoPodcast.xcdatamodeld in Sources */,
+				1FF57D0D28971506003EF77E /* EpisodeSheet.swift in Sources */,
 				1F7ED2B32894490C00ACDB57 /* FavButton.swift in Sources */,
 				1F7ED2952894449700ACDB57 /* ContentView.swift in Sources */,
 				1F7ED2B728944DAC00ACDB57 /* ProfileButton.swift in Sources */,
