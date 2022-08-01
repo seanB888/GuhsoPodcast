@@ -28,6 +28,7 @@ struct RecentShowCard: View {
         .frame(height: 180)
         .background{
             Rectangle()
+                .fill(Color.black)
         }
         .padding(.horizontal)
     }

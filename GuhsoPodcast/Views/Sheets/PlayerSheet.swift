@@ -159,8 +159,6 @@ struct VolumeSection: View {
                     // to decrease the volume...
                     volume = volume - 0.1 > 0 ? volume - 0.1 : 0
                 })
-                Spacer()
-                
                 // Volume progress bar
                             GeometryReader { proxy in
                                 let width = proxy.frame(in: .global).width
@@ -176,7 +174,7 @@ struct VolumeSection: View {
                                         .fill(Color.theme.brand)
                                         .frame(width: progress, height: 4)
                                 }
-                                .frame(maxWidth:.infinity, maxHeight: .infinity, alignment: .center)
+                                .frame(maxWidth:.infinity, alignment: .center)
                             }
                             .padding(.horizontal, getRec().width < 750 ? 15 : 20)
                 
@@ -188,9 +186,8 @@ struct VolumeSection: View {
             }
             .padding(.horizontal, 25)
             .frame(maxWidth: .infinity)
-        .frame(height: 50)
         }
-        .ignoresSafeArea()
+        
     }
 }
 
@@ -217,7 +214,6 @@ struct PlayerControl: View {
         }
         .padding(.horizontal, 25)
         .frame(maxWidth: .infinity)
-        .padding(.top)
     }
 }
 

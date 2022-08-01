@@ -11,6 +11,7 @@ struct SmallCard: View {
     var body: some View {
         VStack {
             Rectangle()
+                .fill(Color.black)
                 .frame(width: 180, height: 210)
                 .cornerRadius(25)
             VStack(alignment: .leading) {

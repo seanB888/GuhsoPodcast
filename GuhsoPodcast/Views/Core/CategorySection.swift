@@ -38,7 +38,7 @@ struct CategorySection: View {
                     TabView {
                         ForEach(0 ..< 3) { item in
                             RecentShowCard()
-                                .fullScreenCover(isPresented: $showSheet, content: { PlayerSheet() })
+                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
                                     self.showSheet = true
                                 }
@@ -64,6 +64,10 @@ struct CategorySection: View {
                         HStack(spacing: 15) {
                             ForEach(0 ..< 5) { item in
                                 SmallCard()
+                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                    .onTapGesture {
+                                        self.showSheet = true
+                                    }
                             }
                         }
                         .padding(.horizontal)
@@ -81,6 +85,10 @@ struct CategorySection: View {
                     VStack(spacing: 30) {
                         ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
                             EpisodeRow()
+                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                .onTapGesture {
+                                    self.showSheet = true
+                                }
                         }
                     }
                 }

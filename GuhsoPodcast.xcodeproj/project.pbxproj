@@ -41,6 +41,7 @@
 		1F83BE8E289579870042DBDA /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8D289579870042DBDA /* View.swift */; };
 		1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */; };
 		1FF57D0D28971506003EF77E /* EpisodeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0C28971506003EF77E /* EpisodeSheet.swift */; };
+		1FF57D0F28977B46003EF77E /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0E28977B46003EF77E /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		1F83BE8D289579870042DBDA /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRow.swift; sourceTree = "<group>"; };
 		1FF57D0C28971506003EF77E /* EpisodeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeSheet.swift; sourceTree = "<group>"; };
+		1FF57D0E28977B46003EF77E /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		1F7ED2A62894465100ACDB57 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1FF57D0E28977B46003EF77E /* AudioManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -277,6 +280,8 @@
 			dependencies = (
 			);
 			name = GuhsoPodcast;
+			packageProductDependencies = (
+			);
 			productName = GuhsoPodcast;
 			productReference = 1F7ED28F2894449700ACDB57 /* GuhsoPodcast.app */;
 			productType = "com.apple.product-type.application";
@@ -305,6 +310,9 @@
 				Base,
 			);
 			mainGroup = 1F7ED2862894449700ACDB57;
+			packageReferences = (
+				1FF57D10289792B4003EF77E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 1F7ED2902894449700ACDB57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,6 +348,7 @@
 				1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */,
 				1F7ED2CA28945F7A00ACDB57 /* SettingsView.swift in Sources */,
 				1F7ED2B12894473C00ACDB57 /* LoginView.swift in Sources */,
+				1FF57D0F28977B46003EF77E /* AudioManager.swift in Sources */,
 				1F83BE82289564870042DBDA /* DirectoryCard.swift in Sources */,
 				1F7ED2B528944ADF00ACDB57 /* PlayButton.swift in Sources */,
 				1F7ED2BE28945C9B00ACDB57 /* CategorySection.swift in Sources */,
@@ -497,6 +506,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,6 +536,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -563,6 +574,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FF57D10289792B4003EF77E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		1F7ED29D2894449900ACDB57 /* GuhsoPodcast.xcdatamodeld */ = {

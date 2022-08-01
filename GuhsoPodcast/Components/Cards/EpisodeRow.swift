@@ -13,6 +13,7 @@ struct EpisodeRow: View {
             HStack {
                 // Image section...
                 Rectangle()
+                    .fill(Color.black)
                     .frame(width: 100, height: 100)
                     .cornerRadius(25)
                 
@@ -33,7 +34,10 @@ struct EpisodeRow: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
                 
-                IconButton(icon: "ellipsis.circle.fill", action: {})
+                IconButton(icon: "ellipsis.circle.fill", action: {
+                    UIApplication.shared.open(URL(string: "https://ucleus.co")!, options: [:]                
+                    )
+                })
             }
             .frame(maxHeight: 80)
             .padding(.horizontal)

@@ -18,6 +18,7 @@ struct FavButton: View {
             Image(systemName: isFav ? "heart.fill" : "heart")
                 .font(.title2)
                 .foregroundColor(Color.theme.brand)
+        
         }
         .padding(10)
         .background(Color.theme.secondaryColor.opacity(0.2))

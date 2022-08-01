@@ -52,6 +52,7 @@ struct EpisodeCard: View {
         .frame(height: 350)
         .background{
             RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color.black)
                 .overlay {
                     Image("logoorange")
                         .resizable()

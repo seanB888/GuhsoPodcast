@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var showSheet: Bool = false
+    
     init() {
         UITableView.appearance().backgroundColor = UIColor.red
     }
@@ -45,9 +47,19 @@ struct HomeView: View {
                             ForEach(0 ..< 8) { index in
                                 GeometryReader { proxy in
                                     Rectangle()
+                                        .fill(Color.black)
+                                        .overlay{
+                                            Text("Title Here")
+                                                .foregroundColor(Color.theme.brand)
+                                                .lineLimit(1)
+                                        }
                                     .frame(width: proxy.frame(in: .global).width, height: 150)
                                     // based on the index number we are changing the corner style...
                                     .clipShape(CustomCorners(corners: index % 2 == 0 ? [.topLeft, .bottomLeft] : [.topRight, .bottomRight], radius: 15))
+                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                    .onTapGesture {
+                                        self.showSheet = true
+                                    }
                                 }
                                 .frame(height: 150)
                             }
@@ -108,7 +120,7 @@ struct RecentEpisodes: View {
             TabView {
                 ForEach(0 ..< 5) { item in
                     EpisodeCard()
-                        .fullScreenCover(isPresented: $showSheet, content: { PlayerSheet() })
+                        .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                         .onTapGesture {
                             self.showSheet = true
                         }

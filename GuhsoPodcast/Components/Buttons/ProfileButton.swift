@@ -12,7 +12,7 @@ struct ProfileButton: View {
     
     // This button will switch to the users image if signed in.
     var body: some View {
-        NavigationLink(destination: {ProfileView()}) {
+        NavigationLink(destination: {LoginView()}) {
             VStack {
                 Image(systemName: "person.circle")
                     .font(.title3)
