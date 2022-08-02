@@ -110,35 +110,35 @@ struct CategoryView_Previews: PreviewProvider {
     }
 }
 
-struct ShowTitles: View {
-    @State var action: () -> Void
-    @State var title: String
-    @State var subTitle: String
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading)  {
-                Text(title)
-                    .fontWeight(.bold)
-                
-                Text(subTitle)
-                    .font(.callout)
-                    .foregroundColor(Color.theme.accent)
-            }
-            .foregroundColor(Color.theme.brand)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 25)
-            
-            Spacer()
-            Button {
-                //
-                action()
-            } label: {
-                Text("See All")
-                    .font(.caption)
-                    .foregroundColor(Color.theme.brand)
-            }
-        }
-        .padding(.trailing)
-    }
-}
+//struct ShowTitles: View {
+//    @State var action: () -> Void
+//    @State var title: String
+//    @State var subTitle: String
+//    
+//    var body: some View {
+//        HStack {
+//            VStack(alignment: .leading)  {
+//                Text(title)
+//                    .fontWeight(.bold)
+//                
+//                Text(subTitle)
+//                    .font(.callout)
+//                    .foregroundColor(Color.theme.accent)
+//            }
+//            .foregroundColor(Color.theme.brand)
+//            .frame(maxWidth: .infinity, alignment: .leading)
+//            .padding(.horizontal, 25)
+//            
+//            Spacer()
+//            Button {
+//                //
+//                action()
+//            } label: {
+//                Text("See All")
+//                    .font(.caption)
+//                    .foregroundColor(Color.theme.brand)
+//            }
+//        }
+//        .padding(.trailing)
+//    }
+//}

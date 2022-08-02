@@ -16,30 +16,33 @@ struct LoginView: View {
             Image("logoorange")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 150, height: 150)
+                .frame(width: 250, height: 250)
             
             Text("LOGIN")
                 .font(.largeTitle)
-            .foregroundColor(Color("Brand"))
+                .foregroundColor(Color("Brand"))
+                .padding(.top)
             
             VStack(spacing: 20) {
-                
+                // Email address
                 HStack {
                     Image(systemName: "envelope")
                     
                     TextField("Email", text: $email)
                         .autocapitalization(.none)
                         .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
+                        .keyboardType(.emailAddress)
                 }
                 .foregroundColor(Color.theme.brand)
                 
+                // Password
                 HStack {
                     Image(systemName: "key")
                     
                     SecureField("Password", text: $password)
                         .textFieldStyle(.roundedBorder)
-                    .autocapitalization(.none)
+                        .autocapitalization(.none)
+                        .keyboardType(.emailAddress)
                 }
                 .foregroundColor(Color.theme.brand)
                 

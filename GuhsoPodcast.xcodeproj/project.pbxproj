@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3687EC2899BAF700B0BB01 /* DirectorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3687EB2899BAF700B0BB01 /* DirectorySheet.swift */; };
 		1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2922894449700ACDB57 /* GuhsoPodcastApp.swift */; };
 		1F7ED2952894449700ACDB57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2942894449700ACDB57 /* ContentView.swift */; };
 		1F7ED2972894449900ACDB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7ED2962894449900ACDB57 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F3687EB2899BAF700B0BB01 /* DirectorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorySheet.swift; sourceTree = "<group>"; };
 		1F7ED28F2894449700ACDB57 /* GuhsoPodcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuhsoPodcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7ED2922894449700ACDB57 /* GuhsoPodcastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuhsoPodcastApp.swift; sourceTree = "<group>"; };
 		1F7ED2942894449700ACDB57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				1F7ED2BB28945C6100ACDB57 /* PlayerSheet.swift */,
 				1FF57D0C28971506003EF77E /* EpisodeSheet.swift */,
+				1F3687EB2899BAF700B0BB01 /* DirectorySheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */,
 				1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */,
 				1F83BE8C28956A890042DBDA /* Double.swift in Sources */,
+				1F3687EC2899BAF700B0BB01 /* DirectorySheet.swift in Sources */,
 				1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */,
 				1F7ED2C228945D0E00ACDB57 /* CartButton.swift in Sources */,
 			);

@@ -35,13 +35,21 @@ struct EpisodeRow: View {
                 .padding(.horizontal)
                 
                 IconButton(icon: "ellipsis.circle.fill", action: {
-                    UIApplication.shared.open(URL(string: "https://ucleus.co")!, options: [:]                
-                    )
+                    showhareCard()
                 })
             }
             .frame(maxHeight: 80)
             .padding(.horizontal)
         }
+    }
+    
+    // MARK: - Share button
+    func showhareCard() {
+        let url = URL(string: "https://ucleus.com")
+        let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+        
+        UIApplication.shared.windows.first?.rootViewController!
+            .present(activityController, animated: true, completion: nil)
     }
 }
 
