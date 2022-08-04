@@ -7,14 +7,14 @@
 
 import Foundation
 
-
-// MARK: - ShowModel
-struct Episode: Codable {
-    let channel: Title
+// MARK: - Episode Model
+struct Episode: Codable, Identifiable {
+    var id = UUID()
+    let channel: Channel
 }
 
 // Main title...
-struct Title: Codable {
+struct Channel: Codable {
     let title: CData
     let description: ShowCData
     let image: [ShowImage]
@@ -41,13 +41,13 @@ struct ShowCData: Codable {
 
 // Show images...
 struct ShowImage: Codable {
-    let url: URLLinks
-    let url2: OtherURL
+    let image: [URLLinks]?
+    let _href: OtherURL
     
     struct URLLinks: Codable {
         let url: String
         let title: String
-        let link: [String]
+        let link: [String]?
     }
     
     struct OtherURL:Codable {

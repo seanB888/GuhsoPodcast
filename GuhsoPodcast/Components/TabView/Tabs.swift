@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct Tabs: View {
+    @State private var selectedTab: Int = 1
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem({TabLable(icon: "house", text: "Home")})
                 .tag(1)

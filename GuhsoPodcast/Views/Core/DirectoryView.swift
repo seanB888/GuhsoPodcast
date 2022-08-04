@@ -41,7 +41,7 @@ struct DirectoryView: View {
                 VStack {
                     TabView {
                         ForEach(0 ..< 3) { item in
-                            RecentShowCard()
+                            RecentShowCard(textHere: "Show Title Here")
                                 .fullScreenCover(isPresented: $showSheet, content: { DirectorySheet() })
                                 .onTapGesture {
                                     self.showSheet = true

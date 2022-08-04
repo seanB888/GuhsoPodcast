@@ -152,7 +152,6 @@ struct VolumeSection: View {
     @State var volume: CGFloat = 0.4
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
             HStack {
                 // Turn volume down
                 IconButton(icon: "speaker.wave.1.fill", action: {
@@ -176,7 +175,8 @@ struct VolumeSection: View {
                                 }
                                 .frame(maxWidth:.infinity, alignment: .center)
                             }
-                            .padding(.horizontal, getRec().width < 750 ? 15 : 20)
+                            .frame(maxHeight: 5)
+                            .padding(.horizontal, getRec().width < 750 ? 1 : 20)
                 
                 // Turn Volume up
                 IconButton(icon: "speaker.wave.3.fill", action: {
@@ -185,8 +185,7 @@ struct VolumeSection: View {
                 })
             }
             .padding(.horizontal, 25)
-            .frame(maxWidth: .infinity)
-        }
+            .frame(maxWidth: .infinity, maxHeight: 85)
         
     }
 }

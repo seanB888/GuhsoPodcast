@@ -1,20 +1,20 @@
 //
-//  EpisodeCard.swift
+//  ImageCard.swift
 //  GuhsoPodcast
 //
-//  Created by SEAN BLAKE on 7/29/22.
+//  Created by SEAN BLAKE on 8/4/22.
 //
 
 import SwiftUI
 
-struct EpisodeCard: View {
+struct ImageCard: View {
     @State var title: String
     @State var episodeNumber: String
     @State var hostName: String
     
     var body: some View {
         VStack {
-            
+            // Favorite button
             HStack {
                 Spacer()
                 FavButton()
@@ -24,9 +24,9 @@ struct EpisodeCard: View {
             
             VStack(alignment: .leading) {
                 HStack(alignment: .bottom) {
-                    
-                    PlayButton(action: {})
-                        .padding(.horizontal, 20)
+//
+//                    PlayButton(action: {})
+//                        .padding(.horizontal, 20)
                     
                     VStack(alignment: .leading) {
                         Text(title)
@@ -69,8 +69,8 @@ struct EpisodeCard: View {
     }
 }
 
-struct EpisodeCard_Previews: PreviewProvider {
+struct ImageCard_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeCard(title: "Episode Title", episodeNumber: "1", hostName: "Host Name")
+        ImageCard(title: "Episode title", episodeNumber: "2", hostName: "Julia & Sean")
     }
 }

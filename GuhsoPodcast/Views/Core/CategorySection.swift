@@ -15,8 +15,8 @@ struct CategorySection: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        IconButton(icon: "chevron.left", action: {})
-                            .padding(.bottom, 5)
+//                        IconButton(icon: "chevron.left", action: {})
+//                            .padding(.bottom, 5)
                         
                         Text("Browse")
                             .font(.title)
@@ -37,7 +37,7 @@ struct CategorySection: View {
                 VStack {
                     TabView {
                         ForEach(0 ..< 3) { item in
-                            RecentShowCard()
+                            RecentShowCard(textHere: "The Show Title")
                                 .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
                                     self.showSheet = true

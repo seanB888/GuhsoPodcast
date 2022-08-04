@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var vm = EpisodeViewModel()
     @State var showSheet: Bool = false
     
     init() {
@@ -22,7 +23,7 @@ struct HomeView: View {
                     RecentEpisodes()
                     
                     // MARK: - Category Section
-                    ExtractedCategoryView()
+                    CategoryView()
                     
                     // MARK: - Other episodes
                     VStack {
@@ -42,24 +43,24 @@ struct HomeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2), spacing: 10, content: {
-
-                            // liked songs...
-                            ForEach(0 ..< 8) { index in
+                            
+                            // Other Shows...
+                            ForEach(0 ..< 6) { index in
                                 GeometryReader { proxy in
                                     Rectangle()
                                         .fill(Color.black)
                                         .overlay{
-                                            Text("Title Here")
+                                            Text("Show Title Here")
                                                 .foregroundColor(Color.theme.brand)
                                                 .lineLimit(1)
                                         }
-                                    .frame(width: proxy.frame(in: .global).width, height: 150)
+                                        .frame(width: proxy.frame(in: .global).width, height: 150)
                                     // based on the index number we are changing the corner style...
-                                    .clipShape(CustomCorners(corners: index % 2 == 0 ? [.topLeft, .bottomLeft] : [.topRight, .bottomRight], radius: 15))
-                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
-                                    .onTapGesture {
-                                        self.showSheet = true
-                                    }
+                                        .clipShape(CustomCorners(corners: index % 2 == 0 ? [.topLeft, .bottomLeft] : [.topRight, .bottomRight], radius: 15))
+                                        .fullScreenCover(isPresented: $showSheet, content: { RemotePlayerSheet() })
+                                        .onTapGesture {
+                                            self.showSheet = true
+                                        }
                                 }
                                 .frame(height: 150)
                             }
@@ -101,7 +102,7 @@ struct HomeView_Previews: PreviewProvider {
 
 // MARK: -RecentEpisode Code
 struct RecentEpisodes: View {
-    
+    @StateObject private var vm = EpisodeViewModel()
     @State var showSheet = false
     
     var body: some View {
@@ -118,12 +119,16 @@ struct RecentEpisodes: View {
             .padding(.bottom, -20)
             
             TabView {
-                ForEach(0 ..< 5) { item in
-                    EpisodeCard()
-                        .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
-                        .onTapGesture {
-                            self.showSheet = true
-                        }
+                ForEach(0 ..< 6) { item in
+                    EpisodeCard(
+                        title: ("Title Of Show"),
+                        episodeNumber: ("1"),
+                        hostName: ("Sean")
+                    )
+                    .fullScreenCover(isPresented: $showSheet, content: { RemotePlayerSheet() })
+                    .onTapGesture {
+                        self.showSheet = true
+                    }
                     
                 }
             }
@@ -133,13 +138,7 @@ struct RecentEpisodes: View {
     }
 }
 
-struct ExtractedCategoryView: View {
-    
-    let threeRows = [
-        GridItem(.flexible(minimum: 40, maximum: 50)),
-        GridItem(.flexible(minimum: 40, maximum: 50)),
-        GridItem(.flexible(minimum: 40, maximum: 50))
-    ]
+struct CategoryView: View {
     
     var body: some View {
         VStack {
@@ -152,12 +151,14 @@ struct ExtractedCategoryView: View {
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            VStack {
-                LazyHGrid(rows: threeRows) {
-                    ForEach(0 ..< 12) { item in
+            // Tags of categories
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(0 ..< 8) { item in
                         CategoryButton()
                     }
                 }
+                .padding(.horizontal)
             }
         }
     }

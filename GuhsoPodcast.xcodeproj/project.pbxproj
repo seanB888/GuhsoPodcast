@@ -43,6 +43,9 @@
 		1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */; };
 		1FA02ABF289A11A70001D9B4 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA02ABE289A11A70001D9B4 /* Episode.swift */; };
 		1FA02AC2289B09D10001D9B4 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA02AC1289B09D10001D9B4 /* EpisodeViewModel.swift */; };
+		1FBD653B289C77490052743C /* BottomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD653A289C77490052743C /* BottomPlayer.swift */; };
+		1FBD653D289C79540052743C /* RemotePlayerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD653C289C79540052743C /* RemotePlayerSheet.swift */; };
+		1FBD653F289C7C2A0052743C /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD653E289C7C2A0052743C /* ImageCard.swift */; };
 		1FF57D0D28971506003EF77E /* EpisodeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0C28971506003EF77E /* EpisodeSheet.swift */; };
 		1FF57D0F28977B46003EF77E /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0E28977B46003EF77E /* AudioManager.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +88,9 @@
 		1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRow.swift; sourceTree = "<group>"; };
 		1FA02ABE289A11A70001D9B4 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		1FA02AC1289B09D10001D9B4 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
+		1FBD653A289C77490052743C /* BottomPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPlayer.swift; sourceTree = "<group>"; };
+		1FBD653C289C79540052743C /* RemotePlayerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePlayerSheet.swift; sourceTree = "<group>"; };
+		1FBD653E289C7C2A0052743C /* ImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCard.swift; sourceTree = "<group>"; };
 		1FF57D0C28971506003EF77E /* EpisodeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeSheet.swift; sourceTree = "<group>"; };
 		1FF57D0E28977B46003EF77E /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +172,7 @@
 		1F7ED2A72894465B00ACDB57 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1FBD6539289C772D0052743C /* Player */,
 				1F7ED2CD2894908F00ACDB57 /* TabView */,
 				1F7ED2AA2894468000ACDB57 /* Cards */,
 				1F7ED2A92894467300ACDB57 /* Buttons */,
@@ -207,6 +214,7 @@
 				1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */,
 				1F83BE81289564870042DBDA /* DirectoryCard.swift */,
 				1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */,
+				1FBD653E289C7C2A0052743C /* ImageCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -289,6 +297,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1FBD6539289C772D0052743C /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				1FBD653A289C77490052743C /* BottomPlayer.swift */,
+				1FBD653C289C79540052743C /* RemotePlayerSheet.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7ED29C2894449900ACDB57 /* Persistence.swift in Sources */,
+				1FBD653F289C7C2A0052743C /* ImageCard.swift in Sources */,
 				1F7ED2B928944F8900ACDB57 /* EpisodeCard.swift in Sources */,
 				1F83BE8E289579870042DBDA /* View.swift in Sources */,
 				1F7ED2CC28947EBE00ACDB57 /* CategoryButton.swift in Sources */,
@@ -372,6 +390,7 @@
 				1F7ED2BC28945C6100ACDB57 /* PlayerSheet.swift in Sources */,
 				1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */,
 				1F7ED2CA28945F7A00ACDB57 /* SettingsView.swift in Sources */,
+				1FBD653B289C77490052743C /* BottomPlayer.swift in Sources */,
 				1F7ED2B12894473C00ACDB57 /* LoginView.swift in Sources */,
 				1FF57D0F28977B46003EF77E /* AudioManager.swift in Sources */,
 				1F83BE82289564870042DBDA /* DirectoryCard.swift in Sources */,
@@ -393,6 +412,7 @@
 				1F7ED2C428945DF500ACDB57 /* SettingsButton.swift in Sources */,
 				1F83BE86289567A40042DBDA /* CustomCorners.swift in Sources */,
 				1F83BE8A289569660042DBDA /* Date.swift in Sources */,
+				1FBD653D289C79540052743C /* RemotePlayerSheet.swift in Sources */,
 				1F7ED2AE289446AC00ACDB57 /* ProfileView.swift in Sources */,
 				1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */,
 				1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */,

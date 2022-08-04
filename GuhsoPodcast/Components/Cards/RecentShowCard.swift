@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct RecentShowCard: View {
+    @State var textHere: String
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading) {
-                        Text("What Our Caribbean parents Never Taught Us.")
+                        Text(textHere)
                             .font(.title3)
                             .fontWeight(.bold)
                     }
@@ -36,6 +38,6 @@ struct RecentShowCard: View {
 
 struct RecentShowCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecentShowCard()
+        RecentShowCard(textHere: "Hello")
     }
 }
