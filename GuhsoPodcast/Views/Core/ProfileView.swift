@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     var body: some View {
         VStack {
             Text("Profile")
                 .font(.largeTitle)
-            .foregroundColor(Color("Brand"))
+                .foregroundColor(Color("Brand"))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BG"))

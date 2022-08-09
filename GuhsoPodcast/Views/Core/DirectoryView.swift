@@ -67,7 +67,7 @@ struct DirectoryView: View {
                         
                         HStack(spacing: 15) {
                             ForEach(0 ..< 5) { item in
-                                SmallCard()
+                                SmallCard(title: "Eat Out Again")
                                     .fullScreenCover(isPresented: $showSheet, content: { DirectorySheet() })
                                     .onTapGesture {
                                         self.showSheet = true
@@ -87,8 +87,8 @@ struct DirectoryView: View {
                     
                     // List section...
                     VStack(spacing: 30) {
-                        ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                            EpisodeRow()
+                        ForEach(0 ..< 10) { item in
+                            EpisodeRow(title: "Dance Hall Music", episode: 12, datePublished: "2022-10-10")
                                 .fullScreenCover(isPresented: $showSheet, content: { DirectorySheet() })
                                 .onTapGesture {
                                     self.showSheet = true

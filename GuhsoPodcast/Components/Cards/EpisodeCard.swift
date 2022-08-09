@@ -11,6 +11,7 @@ struct EpisodeCard: View {
     @State var title: String
     @State var episodeNumber: String
     @State var hostName: String
+    @State var coverImage: String
     
     var body: some View {
         VStack {
@@ -32,6 +33,7 @@ struct EpisodeCard: View {
                         Text(title)
                             .font(.title)
                             .fontWeight(.bold)
+                            .foregroundColor(Color.theme.brand)
                         
                         HStack {
                             Text("Episode:")
@@ -40,7 +42,7 @@ struct EpisodeCard: View {
                         .font(.callout)
                         
                         HStack {
-                            Text("Hosted by:")
+                            // Text("Hosted by:")
                             Text(hostName)
                         }
                         .font(.footnote)
@@ -55,15 +57,32 @@ struct EpisodeCard: View {
         }
         .frame(height: 350)
         .background{
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(Color.black)
-                .overlay {
-                    Image("logoorange")
+            // Background Image...
+            
+            GeometryReader { proxy in
+                AsyncImage(url: URL(string: coverImage)) { image in
+                    image
                         .resizable()
-                        .frame(width: 220, height: 190)
                         .aspectRatio(contentMode: .fill)
-                        .offset(y: -20)
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.black)
+                        .overlay {
+                            Image("logoorange")
+                                .resizable()
+                                .frame(width: 220, height: 190)
+                                .aspectRatio(contentMode: .fill)
+                                .offset(y: -20)
+                        }
                 }
+                .frame(width: proxy.frame(in: .global).width)
+                .cornerRadius(20)
+                .overlay(
+                    LinearGradient(gradient: .init(colors: [Color.clear, Color.clear, Color.black]), startPoint: .top, endPoint: .bottom)
+                        .cornerRadius(20)
+                )
+            }
+            
         }
         .padding(.horizontal)
     }
@@ -71,6 +90,6 @@ struct EpisodeCard: View {
 
 struct EpisodeCard_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeCard(title: "Episode Title", episodeNumber: "1", hostName: "Host Name")
+        EpisodeCard(title: "Episode Title", episodeNumber: "1", hostName: "Host Name", coverImage: "")
     }
 }

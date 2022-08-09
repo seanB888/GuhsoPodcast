@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RemotePlayerSheet: View {
     @Environment(\.presentationMode) var presentationMode
+    var episodes: Episodes
     
     var body: some View {
         VStack(spacing: 20) {
@@ -81,6 +82,6 @@ struct RemotePlayerSheet: View {
 
 struct RemotePlayerSheet_Previews: PreviewProvider {
     static var previews: some View {
-        RemotePlayerSheet()
+        RemotePlayerSheet(episodes: Episodes.all[0])
     }
 }

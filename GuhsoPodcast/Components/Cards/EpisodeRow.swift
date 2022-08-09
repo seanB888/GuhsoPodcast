@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct EpisodeRow: View {
+    @State var title: String
+    @State var episode: Int
+    @State var datePublished: String
+    
     var body: some View {
         VStack {
             HStack {
@@ -18,16 +22,16 @@ struct EpisodeRow: View {
                     .cornerRadius(25)
                 
                 VStack(alignment: .leading) {
-                    Text("Meditation")
+                    Text(title)
                         .font(.title3.bold())
                         .foregroundColor(Color.theme.brand)
                     
-                    Text("Exclusive Content")
+                    Text("Episode: \(episode)")
                         .font(.caption)
                         .foregroundColor(Color.theme.accent)
                     
                     Spacer()
-                    Text("Dec. 20 1hr.")
+                    Text(datePublished)
                         .font(.caption)
                         .foregroundColor(Color.theme.accent)
                 }
@@ -55,6 +59,6 @@ struct EpisodeRow: View {
 
 struct EpisodeRow_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeRow()
+        EpisodeRow(title: "Meditation", episode: 1, datePublished: "2020-27-10")
     }
 }

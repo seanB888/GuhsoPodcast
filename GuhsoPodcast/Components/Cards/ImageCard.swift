@@ -12,6 +12,8 @@ struct ImageCard: View {
     @State var episodeNumber: String
     @State var hostName: String
     
+//    var episodes: Episodes
+    
     var body: some View {
         VStack {
             // Favorite button
@@ -24,10 +26,6 @@ struct ImageCard: View {
             
             VStack(alignment: .leading) {
                 HStack(alignment: .bottom) {
-//
-//                    PlayButton(action: {})
-//                        .padding(.horizontal, 20)
-                    
                     VStack(alignment: .leading) {
                         Text(title)
                             .font(.title)

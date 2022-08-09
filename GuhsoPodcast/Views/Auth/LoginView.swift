@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email: String = ""
-    @State var password: String = ""
+//    @State var email: String = ""
+//    @State var password: String = ""
+    @StateObject private var loginVM = LoginViewModel()
+    @EnvironmentObject var authentication: Authentication
     
     var body: some View {
         VStack {
@@ -17,6 +19,9 @@ struct LoginView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 250, height: 250)
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
             
             Text("LOGIN")
                 .font(.largeTitle)
@@ -28,9 +33,7 @@ struct LoginView: View {
                 HStack {
                     Image(systemName: "envelope")
                     
-                    TextField("Email", text: $email)
-                        .autocapitalization(.none)
-                        .textFieldStyle(.roundedBorder)
+                    TextField("Email", text: $loginVM.credentials.email)
                         .keyboardType(.emailAddress)
                 }
                 .foregroundColor(Color.theme.brand)
@@ -39,16 +42,23 @@ struct LoginView: View {
                 HStack {
                     Image(systemName: "key")
                     
-                    SecureField("Password", text: $password)
-                        .textFieldStyle(.roundedBorder)
-                        .autocapitalization(.none)
+                    SecureField("Password", text: $loginVM.credentials.password)
                         .keyboardType(.emailAddress)
+                    
+                    // the progessview
+                    if loginVM.showProgressView {
+                        ProgressView()
+                    }
                 }
                 .foregroundColor(Color.theme.brand)
                 
                 // Submit button
                 Button {
                     //
+                    loginVM.login { success in
+                        //
+                        authentication.updateValidation(success: success)
+                    }
                 } label: {
                     Text("SUBMIT")
                         .font(.title.bold())
@@ -60,17 +70,26 @@ struct LoginView: View {
                     Capsule()
                         .foregroundColor(Color.theme.brand)
                 }
-                
-                // Trouble signing in
+                .disabled(loginVM.loginButtonDisabled)
+            }
+            .autocapitalization(.none)
+            .textFieldStyle(.roundedBorder)
+            .padding(.horizontal, 20)
+            
+            
+            // Trouble signing in
+            VStack {
                 Button {
                     //
                 } label: {
                     Text("Trouble Signing In")
+                        .font(.callout)
+                        .fontWeight(.light)
+                        .foregroundColor(Color.theme.brand)
                 }
-
-
+                .padding()
             }
-            .padding(.horizontal, 20)
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BG"))
@@ -79,6 +98,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(email: "email")
+        LoginView()
     }
 }

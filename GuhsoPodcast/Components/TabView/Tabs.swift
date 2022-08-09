@@ -11,11 +11,11 @@ struct Tabs: View {
     @State private var selectedTab: Int = 1
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView()
+            HomeView(episodes: Episodes.all)
                 .tabItem({TabLable(icon: "house", text: "Home")})
                 .tag(1)
             
-            CategorySection()
+            CategorySection(episodes: Episodes.all)
                 .badge(2)
                 .tabItem({TabLable(icon: "rectangle.3.group", text: "Explore")})
                 .tag(2)

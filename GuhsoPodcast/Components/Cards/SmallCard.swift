@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SmallCard: View {
+    @State var title: String
+    
     var body: some View {
         VStack {
             Rectangle()
@@ -15,7 +17,7 @@ struct SmallCard: View {
                 .frame(width: 180, height: 210)
                 .cornerRadius(25)
             VStack(alignment: .leading) {
-                Text("Meditation")
+                Text(title)
                     .font(.title3.bold())
                     .foregroundColor(Color.theme.brand)
                 
@@ -32,6 +34,6 @@ struct SmallCard: View {
 
 struct SmallCard_Previews: PreviewProvider {
     static var previews: some View {
-        SmallCard()
+        SmallCard(title: "Meditation")
     }
 }

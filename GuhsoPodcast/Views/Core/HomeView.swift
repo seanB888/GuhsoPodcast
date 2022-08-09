@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var authentication = Authentication()
+    var episodes: [Episodes]
+    @EnvironmentObject var episodeVM: EpisodeViewModel
     @StateObject private var vm = EpisodeViewModel()
     @State var showSheet: Bool = false
-    
-    init() {
-        UITableView.appearance().backgroundColor = UIColor.red
-    }
     
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView(showsIndicators: false) {
                     // MARK: - Recent Episodes
-                    RecentEpisodes()
+                    RecentEpisodes(episodes: Episodes.featureEpisodes)
                     
                     // MARK: - Category Section
-                    CategoryView()
+                    CategoryView(episodes: Episodes.all)
                     
                     // MARK: - Other episodes
                     VStack {
@@ -32,8 +31,9 @@ struct HomeView: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
+                            
                             Spacer()
-                            NavigationLink(destination: { CategorySection()}) {
+                            NavigationLink(destination: { CategorySection(episodes: Episodes.all)}) {
                                 Text("See All")
                                     .font(.caption)
                                     .foregroundColor(Color.theme.brand)
@@ -45,22 +45,39 @@ struct HomeView: View {
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2), spacing: 10, content: {
                             
                             // Other Shows...
-                            ForEach(0 ..< 6) { index in
+                            ForEach(episodes) { index in
                                 GeometryReader { proxy in
-                                    Rectangle()
-                                        .fill(Color.black)
-                                        .overlay{
-                                            Text("Show Title Here")
-                                                .foregroundColor(Color.theme.brand)
-                                                .lineLimit(1)
-                                        }
-                                        .frame(width: proxy.frame(in: .global).width, height: 150)
+                                    
+                                    AsyncImage(url: URL(string: index.album_cover)) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(maxWidth: .infinity, maxHeight: 100)
+                                            .overlay(
+                                                Text(index.title)
+                                                    .fontWeight(.bold)
+                                                    .lineLimit(1)
+                                                    .foregroundColor(Color.theme.brand)
+                                                    .offset(y: 30)
+                                                    .padding(.horizontal)
+                                            )
+                                    } placeholder: {
+                                        Rectangle()
+                                            .fill(Color.black)
+                                            .overlay{
+                                                Text(index.title)
+                                                    .foregroundColor(Color.theme.brand)
+                                                    .lineLimit(1)
+                                                    .padding(.horizontal, 25)
+                                            }
+                                    }
+                                    .frame(width: proxy.frame(in: .global).width, height: 150)
                                     // based on the index number we are changing the corner style...
-                                        .clipShape(CustomCorners(corners: index % 2 == 0 ? [.topLeft, .bottomLeft] : [.topRight, .bottomRight], radius: 15))
-                                        .fullScreenCover(isPresented: $showSheet, content: { RemotePlayerSheet() })
-                                        .onTapGesture {
-                                            self.showSheet = true
-                                        }
+//                                    .clipShape(CustomCorners(corners: index % 2 == 0 ? [.topLeft, .bottomLeft] : [.topRight, .bottomRight], radius: 15))
+                                    //.fullScreenCover(isPresented: $showSheet, content: { RemotePlayerSheet() })
+                                    .onTapGesture {
+                                        self.showSheet = true
+                                    }
                                 }
                                 .frame(height: 150)
                             }
@@ -84,7 +101,15 @@ struct HomeView: View {
                     CartButton()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    
                     ProfileButton()
+                    if authentication.isValidated {
+                        ProfileView()
+                        .environmentObject(authentication)
+                    } else {
+                        LoginView()
+                            .environmentObject(authentication)
+                    }
                 }
             }
         }
@@ -95,14 +120,16 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(episodes: Episodes.all)
             .previewInterfaceOrientation(.portrait)
     }
 }
 
 // MARK: -RecentEpisode Code
 struct RecentEpisodes: View {
-    @StateObject private var vm = EpisodeViewModel()
+    var episodes: [Episodes]
+    @EnvironmentObject var episodeVM: EpisodeViewModel
+    
     @State var showSheet = false
     
     var body: some View {
@@ -112,6 +139,7 @@ struct RecentEpisodes: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 20)
@@ -119,13 +147,14 @@ struct RecentEpisodes: View {
             .padding(.bottom, -20)
             
             TabView {
-                ForEach(0 ..< 6) { item in
+                ForEach(episodes) { item in
                     EpisodeCard(
-                        title: ("Title Of Show"),
-                        episodeNumber: ("1"),
-                        hostName: ("Sean")
+                        title: (item.title),
+                        episodeNumber: ("\(item.epispode)"),
+                        hostName: (item.datePublished),
+                        coverImage: item.album_cover
                     )
-                    .fullScreenCover(isPresented: $showSheet, content: { RemotePlayerSheet() })
+                    //.fullScreenCover(isPresented: $showSheet, content: { RemotePlayerSheet() })
                     .onTapGesture {
                         self.showSheet = true
                     }
@@ -139,6 +168,8 @@ struct RecentEpisodes: View {
 }
 
 struct CategoryView: View {
+    var episodes: [Episodes]
+    @EnvironmentObject var episodeVM: EpisodeViewModel
     
     var body: some View {
         VStack {
@@ -154,8 +185,8 @@ struct CategoryView: View {
             // Tags of categories
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(0 ..< 8) { item in
-                        CategoryButton()
+                    ForEach(episodes) { item in
+                        CategoryButton(categoryTitle: item.category)
                     }
                 }
                 .padding(.horizontal)

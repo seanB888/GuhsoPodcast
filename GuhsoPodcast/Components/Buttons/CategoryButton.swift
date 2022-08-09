@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CategoryButton: View {
+    @State var categoryTitle: String
+    
     var body: some View {
-        Text("Fashion")
+        Text(categoryTitle)
             .foregroundColor(Color.theme.brand)
             .padding(.vertical, 5)
             .padding(.horizontal, 20)
@@ -22,6 +24,6 @@ struct CategoryButton: View {
 
 struct CategoryButton_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryButton()
+        CategoryButton(categoryTitle: "Styles")
     }
 }

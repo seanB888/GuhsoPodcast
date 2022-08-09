@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct CategorySection: View {
-    @State var showSheet = false
+    @EnvironmentObject var episodeVM: EpisodeViewModel
+    @State private var showSheet = false
+    
+    var episodes: [Episodes]
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -36,9 +39,9 @@ struct CategorySection: View {
                 
                 VStack {
                     TabView {
-                        ForEach(0 ..< 3) { item in
-                            RecentShowCard(textHere: "The Show Title")
-                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                        ForEach(episodes) { item in
+                            RecentShowCard(textHere: item.title)
+//                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet( episodes: Episodes.featureEpisodes) })
                                 .onTapGesture {
                                     self.showSheet = true
                                 }
@@ -62,11 +65,11 @@ struct CategorySection: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         HStack(spacing: 15) {
-                            ForEach(0 ..< 5) { item in
-                                SmallCard()
-                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                            ForEach(episodes) { item in
+                                SmallCard(title: item.title)
+                                    // .fullScreenCover(isPresented: $showSheet, content: { })
                                     .onTapGesture {
-                                        self.showSheet = true
+                                        showSheet = true
                                     }
                             }
                         }
@@ -83,11 +86,11 @@ struct CategorySection: View {
                     
                     // List section...
                     VStack(spacing: 30) {
-                        ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                            EpisodeRow()
-                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                        ForEach(episodes) { item in
+                            EpisodeRow(title: item.title, episode: item.epispode, datePublished: item.datePublished)
+                                // .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
-                                    self.showSheet = true
+                                    showSheet = true
                                 }
                         }
                     }
@@ -106,7 +109,7 @@ struct CategorySection: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategorySection()
+        CategorySection(episodes: Episodes.all)
     }
 }
 
