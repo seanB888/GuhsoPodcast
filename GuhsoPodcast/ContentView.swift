@@ -10,7 +10,23 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        Tabs()
+        NavigationView {
+            Tabs()
+                .navigationTitle("Guhso")
+            // MARK: -ToolBar Section
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    SettingsButton()
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    HStack {
+                        CartButton()
+                        ProfileButton()
+                    }
+                }
+            }
+            .background(.red)
+        }
     }
 }
 

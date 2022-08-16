@@ -11,16 +11,25 @@ struct EpisodeRow: View {
     @State var title: String
     @State var episode: Int
     @State var datePublished: String
+    @State var image: String
     
     var body: some View {
         VStack {
             HStack {
                 // Image section...
-                Rectangle()
-                    .fill(Color.black)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(25)
-                
+                AsyncImage(url: URL(string: image)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(25)
+                } placeholder: {
+                    Rectangle()
+                        .fill(Color.black)
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(25)
+                    
+                }
                 VStack(alignment: .leading) {
                     Text(title)
                         .font(.title3.bold())
@@ -39,7 +48,7 @@ struct EpisodeRow: View {
                 .padding(.horizontal)
                 
                 IconButton(icon: "ellipsis.circle.fill", action: {
-                    showhareCard()
+//                    showShareCard()
                 })
             }
             .frame(maxHeight: 80)
@@ -48,17 +57,17 @@ struct EpisodeRow: View {
     }
     
     // MARK: - Share button
-    func showhareCard() {
-        let url = URL(string: "https://ucleus.com")
-        let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
-        
-        UIApplication.shared.windows.first?.rootViewController!
-            .present(activityController, animated: true, completion: nil)
-    }
+//    func showShareCard() {
+//        let url = URL(string: "https://ucleus.com")
+//        let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+//
+//        UIApplication.shared.windows.first?.rootViewController!
+//          .present(activityController, animated: true, completion: nil)
+//    }
 }
 
 struct EpisodeRow_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeRow(title: "Meditation", episode: 1, datePublished: "2020-27-10")
+        EpisodeRow(title: "Meditation", episode: 1, datePublished: "2020-27-10", image: "")
     }
 }

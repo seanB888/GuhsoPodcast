@@ -21,6 +21,8 @@ final class EpisodeViewModelOld: ObservableObject {
                 // The JSON Decoder
                 if let error = error {
                     // TODO: Handle error...
+                    print(error.localizedDescription)
+                    
                 } else {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase // converts snake case text
@@ -30,7 +32,6 @@ final class EpisodeViewModelOld: ObservableObject {
                         // TODO: Handle setting the data...
                         
                         self?.episodes = episodes
-                        
                     } else {
                         // TODO: Handle an error...
                         

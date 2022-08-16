@@ -11,16 +11,16 @@ struct Tabs: View {
     @State private var selectedTab: Int = 1
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView(episodes: Episodes.all)
+            HomeView(vm: EpisodeViewModel(), episodes: Episodes.all)
                 .tabItem({TabLable(icon: "house", text: "Home")})
                 .tag(1)
             
-            CategorySection(episodes: Episodes.all)
+            CategorySection(episodes: Episodes.all, featured: FeaturedEpisodes.featuredEpisodes)
                 .badge(2)
                 .tabItem({TabLable(icon: "rectangle.3.group", text: "Explore")})
                 .tag(2)
             
-            DirectoryView()
+            DirectoryView(vm: DirectoryViewModel(), directory: Directory.featured)
                 .tabItem({TabLable(icon: "book.fill", text: "Directory")})
                 .tag(3)
             

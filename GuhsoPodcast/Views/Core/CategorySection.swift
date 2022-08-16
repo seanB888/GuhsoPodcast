@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct CategorySection: View {
-    @EnvironmentObject var episodeVM: EpisodeViewModel
-    @State private var showSheet = false
-    
     var episodes: [Episodes]
+    var featured: [FeaturedEpisodes]
+    @EnvironmentObject var episodeVM: EpisodeViewModel
+    @EnvironmentObject var featuredEpisodeVM: FeaturedEpisodeViewModel
+    @State private var showSheet = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 HStack {
+                    // MARK: - Top section
                     VStack(alignment: .leading) {
-//                        IconButton(icon: "chevron.left", action: {})
-//                            .padding(.bottom, 5)
                         
                         Text("Browse")
                             .font(.title)
@@ -28,46 +28,40 @@ struct CategorySection: View {
                     }
                     
                 }
+                .padding(.top, 45)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 25)
                 
+                // Divider...
                 CustomDivider(size: 0.5)
                 
                 // MARK: - Recent Shows...
-                
-                ShowTitles(action: {}, title: "Recent Shows", subTitle: "Season 2")
-                
+                // ShowTitles(action: {}, title: "Recent Shows", subTitle: "Season 2")
                 VStack {
                     TabView {
-                        ForEach(episodes) { item in
-                            RecentShowCard(textHere: item.title)
-//                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet( episodes: Episodes.featureEpisodes) })
+                        ForEach(featured) { item in
+                            RecentShowCard(textHere: item.title, image: item.album_cover)
                                 .onTapGesture {
                                     self.showSheet = true
                                 }
-                            
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .frame(height: 180)
                 }
-                
                 .padding(.bottom)
                 
                 CustomDivider(size: 0.5)
                 
                 // MARK: - Premium listening...
                 VStack {
-                    
-                    ShowTitles(action: {}, title: "Premium Listening", subTitle: "Exclusive Content")
-                    
-                    
+                    // ShowTitles(action: {}, title: "Premium Listening", subTitle: "Exclusive Content")
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         HStack(spacing: 15) {
                             ForEach(episodes) { item in
-                                SmallCard(title: item.title)
-                                    // .fullScreenCover(isPresented: $showSheet, content: { })
+                                SmallCard(title: item.title, image: item.album_cover)
+                                // .fullScreenCover(isPresented: $showSheet, content: { })
                                     .onTapGesture {
                                         showSheet = true
                                     }
@@ -82,19 +76,20 @@ struct CategorySection: View {
                 
                 // MARK: - Episode listening...
                 VStack {
-                    ShowTitles(action: {}, title: "Episodes", subTitle: "")
+                    // ShowTitles(action: {}, title: "Episodes", subTitle: "")
                     
                     // List section...
                     VStack(spacing: 30) {
                         ForEach(episodes) { item in
-                            EpisodeRow(title: item.title, episode: item.epispode, datePublished: item.datePublished)
-                                // .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                            EpisodeRow(title: item.title, episode: item.epispode, datePublished: item.datePublished, image: item.album_cover)
+                            // .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
                                     showSheet = true
                                 }
                         }
                     }
                 }
+                .padding(.top, 20)
                 
                 
             }
@@ -107,9 +102,9 @@ struct CategorySection: View {
     }
 }
 
-struct CategoryView_Previews: PreviewProvider {
+struct CategorySection_Previews: PreviewProvider {
     static var previews: some View {
-        CategorySection(episodes: Episodes.all)
+        CategorySection(episodes: Episodes.all, featured: FeaturedEpisodes.featuredEpisodes)
     }
 }
 

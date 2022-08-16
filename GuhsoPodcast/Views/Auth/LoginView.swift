@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-//    @State var email: String = ""
-//    @State var password: String = ""
     @StateObject private var loginVM = LoginViewModel()
-    @EnvironmentObject var authentication: Authentication
+    // @EnvironmentObject var authentication: Authentication
     
     var body: some View {
         VStack {
@@ -55,10 +53,9 @@ struct LoginView: View {
                 // Submit button
                 Button {
                     //
-                    loginVM.login { success in
-                        //
-                        authentication.updateValidation(success: success)
-                    }
+//                    loginVM.login { success in
+//                        authentication.updateValidation(success: success)
+//                    }
                 } label: {
                     Text("SUBMIT")
                         .font(.title.bold())

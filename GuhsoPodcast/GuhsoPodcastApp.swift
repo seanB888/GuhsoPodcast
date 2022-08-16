@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct GuhsoPodcastApp: App {
-
+    //@StateObject var authentication = Authentication()
+    
     var body: some Scene {
         WindowGroup {
-           ContentView()
-               
+            ContentView()
         }
     }
 }

@@ -12,7 +12,15 @@
 		1F0078AD28A0AC4A00ED80F1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0078AC28A0AC4A00ED80F1 /* UIApplication+Extension.swift */; };
 		1F0078AF28A0ACFD00ED80F1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0078AE28A0ACFD00ED80F1 /* LoginViewModel.swift */; };
 		1F0078B128A0C83E00ED80F1 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0078B028A0C83E00ED80F1 /* Authentication.swift */; };
+		1F24EC9228A990D6000846B3 /* RecentEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EC9128A990D6000846B3 /* RecentEpisodes.swift */; };
+		1F24EC9428A99186000846B3 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F24EC9328A99186000846B3 /* CategoryView.swift */; };
+		1F27397F28A2F53D002A875C /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27397E28A2F53D002A875C /* FeaturedCard.swift */; };
+		1F350BF828AB431B00B97B78 /* OtherEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F350BF728AB431B00B97B78 /* OtherEpisodes.swift */; };
+		1F350BFA28AB434D00B97B78 /* ExclusiveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F350BF928AB434D00B97B78 /* ExclusiveContent.swift */; };
+		1F350BFF28AB43FF00B97B78 /* FeaturedEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F350BFE28AB43FF00B97B78 /* FeaturedEpisodes.swift */; };
+		1F350C0128AB4B9200B97B78 /* FeaturedEpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F350C0028AB4B9200B97B78 /* FeaturedEpisodeViewModel.swift */; };
 		1F3687EC2899BAF700B0BB01 /* DirectorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3687EB2899BAF700B0BB01 /* DirectorySheet.swift */; };
+		1F39471C28A7EA56008D73EB /* DirectorySmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39471B28A7EA56008D73EB /* DirectorySmallCard.swift */; };
 		1F6466F4289CBC9900E51600 /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6466F3289CBC9900E51600 /* Episodes.swift */; };
 		1F6466F6289CBD3900E51600 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6466F5289CBD3900E51600 /* EpisodeViewModel.swift */; };
 		1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7ED2922894449700ACDB57 /* GuhsoPodcastApp.swift */; };
@@ -53,6 +61,8 @@
 		1FBD653B289C77490052743C /* BottomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD653A289C77490052743C /* BottomPlayer.swift */; };
 		1FBD653D289C79540052743C /* RemotePlayerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD653C289C79540052743C /* RemotePlayerSheet.swift */; };
 		1FBD653F289C7C2A0052743C /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD653E289C7C2A0052743C /* ImageCard.swift */; };
+		1FC8498B28A4B20E001839F5 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8498A28A4B20E001839F5 /* Directory.swift */; };
+		1FC8498D28A4B983001839F5 /* DirectoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8498C28A4B983001839F5 /* DirectoryViewModel.swift */; };
 		1FF57D0D28971506003EF77E /* EpisodeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0C28971506003EF77E /* EpisodeSheet.swift */; };
 		1FF57D0F28977B46003EF77E /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF57D0E28977B46003EF77E /* AudioManager.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +73,15 @@
 		1F0078AC28A0AC4A00ED80F1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		1F0078AE28A0ACFD00ED80F1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1F0078B028A0C83E00ED80F1 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		1F24EC9128A990D6000846B3 /* RecentEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentEpisodes.swift; sourceTree = "<group>"; };
+		1F24EC9328A99186000846B3 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		1F27397E28A2F53D002A875C /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
+		1F350BF728AB431B00B97B78 /* OtherEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherEpisodes.swift; sourceTree = "<group>"; };
+		1F350BF928AB434D00B97B78 /* ExclusiveContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusiveContent.swift; sourceTree = "<group>"; };
+		1F350BFE28AB43FF00B97B78 /* FeaturedEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedEpisodes.swift; sourceTree = "<group>"; };
+		1F350C0028AB4B9200B97B78 /* FeaturedEpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedEpisodeViewModel.swift; sourceTree = "<group>"; };
 		1F3687EB2899BAF700B0BB01 /* DirectorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorySheet.swift; sourceTree = "<group>"; };
+		1F39471B28A7EA56008D73EB /* DirectorySmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorySmallCard.swift; sourceTree = "<group>"; };
 		1F6466F3289CBC9900E51600 /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		1F6466F5289CBD3900E51600 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		1F7ED28F2894449700ACDB57 /* GuhsoPodcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuhsoPodcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +123,8 @@
 		1FBD653A289C77490052743C /* BottomPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPlayer.swift; sourceTree = "<group>"; };
 		1FBD653C289C79540052743C /* RemotePlayerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePlayerSheet.swift; sourceTree = "<group>"; };
 		1FBD653E289C7C2A0052743C /* ImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCard.swift; sourceTree = "<group>"; };
+		1FC8498A28A4B20E001839F5 /* Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		1FC8498C28A4B983001839F5 /* DirectoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryViewModel.swift; sourceTree = "<group>"; };
 		1FF57D0C28971506003EF77E /* EpisodeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeSheet.swift; sourceTree = "<group>"; };
 		1FF57D0E28977B46003EF77E /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +147,51 @@
 				1F0078B028A0C83E00ED80F1 /* Authentication.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1F350BFB28AB435B00B97B78 /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				1FC8498A28A4B20E001839F5 /* Directory.swift */,
+			);
+			path = Directory;
+			sourceTree = "<group>";
+		};
+		1F350BFC28AB436500B97B78 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				1F6466F3289CBC9900E51600 /* Episodes.swift */,
+				1F350BF928AB434D00B97B78 /* ExclusiveContent.swift */,
+				1F350BF728AB431B00B97B78 /* OtherEpisodes.swift */,
+				1F350BFE28AB43FF00B97B78 /* FeaturedEpisodes.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		1F350BFD28AB438600B97B78 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1F0078A728A0AA5500ED80F1 /* Credentials.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1F39471928A7E8A4008D73EB /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				1F39471A28A7EA0A008D73EB /* Cards */,
+				1F27397E28A2F53D002A875C /* FeaturedCard.swift */,
+				1F83BE81289564870042DBDA /* DirectoryCard.swift */,
+			);
+			path = Directory;
+			sourceTree = "<group>";
+		};
+		1F39471A28A7EA0A008D73EB /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				1F39471B28A7EA56008D73EB /* DirectorySmallCard.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		1F7ED2862894449700ACDB57 = {
@@ -176,11 +241,11 @@
 		1F7ED2A52894464700ACDB57 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1F7ED2C828945F6300ACDB57 /* Settings */,
-				1F7ED2C528945EFC00ACDB57 /* Shop */,
-				1F7ED2BA28945C4600ACDB57 /* Sheets */,
 				1F7ED2AF2894472A00ACDB57 /* Auth */,
 				1F7ED2A82894466900ACDB57 /* Core */,
+				1F7ED2C828945F6300ACDB57 /* Settings */,
+				1F7ED2BA28945C4600ACDB57 /* Sheets */,
+				1F7ED2C528945EFC00ACDB57 /* Shop */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,10 +261,13 @@
 		1F7ED2A72894465B00ACDB57 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1F39471928A7E8A4008D73EB /* Directory */,
 				1FBD6539289C772D0052743C /* Player */,
 				1F7ED2CD2894908F00ACDB57 /* TabView */,
 				1F7ED2AA2894468000ACDB57 /* Cards */,
 				1F7ED2A92894467300ACDB57 /* Buttons */,
+				1F24EC9128A990D6000846B3 /* RecentEpisodes.swift */,
+				1F24EC9328A99186000846B3 /* CategoryView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,7 +304,6 @@
 				1F7ED2B828944F8900ACDB57 /* EpisodeCard.swift */,
 				1F7ED2D42894BF8900ACDB57 /* RecentShowCard.swift */,
 				1F7ED2D62894BFA100ACDB57 /* SmallCard.swift */,
-				1F83BE81289564870042DBDA /* DirectoryCard.swift */,
 				1F83BE8F2895E7480042DBDA /* EpisodeRow.swift */,
 				1FBD653E289C7C2A0052743C /* ImageCard.swift */,
 			);
@@ -309,9 +376,10 @@
 		1FA02ABB289A10460001D9B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F350BFD28AB438600B97B78 /* Auth */,
+				1F350BFC28AB436500B97B78 /* Episodes */,
+				1F350BFB28AB435B00B97B78 /* Directory */,
 				1FA02ABE289A11A70001D9B4 /* Episode.swift */,
-				1F6466F3289CBC9900E51600 /* Episodes.swift */,
-				1F0078A728A0AA5500ED80F1 /* Credentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +390,8 @@
 				1FA02AC1289B09D10001D9B4 /* EpisodeViewModelOld.swift */,
 				1F6466F5289CBD3900E51600 /* EpisodeViewModel.swift */,
 				1F0078AE28A0ACFD00ED80F1 /* LoginViewModel.swift */,
+				1FC8498C28A4B983001839F5 /* DirectoryViewModel.swift */,
+				1F350C0028AB4B9200B97B78 /* FeaturedEpisodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -382,7 +452,6 @@
 			);
 			mainGroup = 1F7ED2862894449700ACDB57;
 			packageReferences = (
-				1FF57D10289792B4003EF77E /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 1F7ED2902894449700ACDB57 /* Products */;
 			projectDirPath = "";
@@ -415,8 +484,11 @@
 				1F7ED2B928944F8900ACDB57 /* EpisodeCard.swift in Sources */,
 				1F83BE8E289579870042DBDA /* View.swift in Sources */,
 				1F7ED2CC28947EBE00ACDB57 /* CategoryButton.swift in Sources */,
+				1F27397F28A2F53D002A875C /* FeaturedCard.swift in Sources */,
+				1F350C0128AB4B9200B97B78 /* FeaturedEpisodeViewModel.swift in Sources */,
 				1F7ED2CF289490A600ACDB57 /* Tabs.swift in Sources */,
 				1F7ED2BC28945C6100ACDB57 /* PlayerSheet.swift in Sources */,
+				1F350BF828AB431B00B97B78 /* OtherEpisodes.swift in Sources */,
 				1F7ED2D72894BFA100ACDB57 /* SmallCard.swift in Sources */,
 				1F0078AF28A0ACFD00ED80F1 /* LoginViewModel.swift in Sources */,
 				1F7ED2CA28945F7A00ACDB57 /* SettingsView.swift in Sources */,
@@ -426,12 +498,16 @@
 				1FF57D0F28977B46003EF77E /* AudioManager.swift in Sources */,
 				1F83BE82289564870042DBDA /* DirectoryCard.swift in Sources */,
 				1F7ED2B528944ADF00ACDB57 /* PlayButton.swift in Sources */,
+				1F24EC9228A990D6000846B3 /* RecentEpisodes.swift in Sources */,
+				1F24EC9428A99186000846B3 /* CategoryView.swift in Sources */,
 				1F7ED2BE28945C9B00ACDB57 /* CategorySection.swift in Sources */,
 				1F7ED2D12894986200ACDB57 /* IconButton.swift in Sources */,
 				1F7ED2C028945CB600ACDB57 /* DirectoryView.swift in Sources */,
 				1F7ED29F2894449900ACDB57 /* GuhsoPodcast.xcdatamodeld in Sources */,
 				1FF57D0D28971506003EF77E /* EpisodeSheet.swift in Sources */,
 				1F7ED2B32894490C00ACDB57 /* FavButton.swift in Sources */,
+				1F39471C28A7EA56008D73EB /* DirectorySmallCard.swift in Sources */,
+				1FC8498D28A4B983001839F5 /* DirectoryViewModel.swift in Sources */,
 				1F7ED2952894449700ACDB57 /* ContentView.swift in Sources */,
 				1F6466F4289CBC9900E51600 /* Episodes.swift in Sources */,
 				1F7ED2B728944DAC00ACDB57 /* ProfileButton.swift in Sources */,
@@ -446,16 +522,19 @@
 				1F7ED2C428945DF500ACDB57 /* SettingsButton.swift in Sources */,
 				1F83BE86289567A40042DBDA /* CustomCorners.swift in Sources */,
 				1F83BE8A289569660042DBDA /* Date.swift in Sources */,
+				1F350BFA28AB434D00B97B78 /* ExclusiveContent.swift in Sources */,
 				1FBD653D289C79540052743C /* RemotePlayerSheet.swift in Sources */,
 				1F7ED2AE289446AC00ACDB57 /* ProfileView.swift in Sources */,
 				1F7ED2932894449700ACDB57 /* GuhsoPodcastApp.swift in Sources */,
 				1F7ED2D32894B62B00ACDB57 /* FavButton2.swift in Sources */,
 				1F83BE8C28956A890042DBDA /* Double.swift in Sources */,
+				1F350BFF28AB43FF00B97B78 /* FeaturedEpisodes.swift in Sources */,
 				1F3687EC2899BAF700B0BB01 /* DirectorySheet.swift in Sources */,
 				1F83BE902895E7480042DBDA /* EpisodeRow.swift in Sources */,
 				1F7ED2C228945D0E00ACDB57 /* CartButton.swift in Sources */,
 				1F6466F6289CBD3900E51600 /* EpisodeViewModel.swift in Sources */,
 				1F0078AB28A0AAB600ED80F1 /* APIService.swift in Sources */,
+				1FC8498B28A4B20E001839F5 /* Directory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,17 +737,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1FF57D10289792B4003EF77E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		1F7ED29D2894449900ACDB57 /* GuhsoPodcast.xcdatamodeld */ = {
