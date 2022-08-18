@@ -87,7 +87,7 @@ struct CategorySection: View {
                     // List section...
                     VStack(spacing: 30) {
                         ForEach(episodes) { item in
-                            EpisodeRow(title: item.title, episode: item.epispode, datePublished: item.datePublished, image: item.album_cover)
+                            EpisodeRow(title: item.title, season: item.season, episode: item.epispode, datePublished: item.datePublished, image: item.album_cover)
                                 .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
                                     showSheet = true

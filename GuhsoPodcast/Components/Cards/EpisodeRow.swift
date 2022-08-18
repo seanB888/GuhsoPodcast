@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EpisodeRow: View {
     @State var title: String
+    @State var season: Int
     @State var episode: Int
     @State var datePublished: String
     @State var image: String
@@ -33,6 +34,10 @@ struct EpisodeRow: View {
                 VStack(alignment: .leading) {
                     Text(title)
                         .font(.title3.bold())
+                        .foregroundColor(Color.theme.brand)
+                    
+                    Text("Episode: \(season)")
+                        .font(.caption)
                         .foregroundColor(Color.theme.brand)
                     
                     Text("Episode: \(episode)")
@@ -68,6 +73,6 @@ struct EpisodeRow: View {
 
 struct EpisodeRow_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeRow(title: "Meditation", episode: 1, datePublished: "2020-27-10", image: "")
+        EpisodeRow(title: "Meditation", season: 1, episode: 1, datePublished: "2020-27-10", image: "")
     }
 }
