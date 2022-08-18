@@ -10,8 +10,11 @@ import SwiftUI
 struct CategorySection: View {
     var episodes: [Episodes]
     var featured: [FeaturedEpisodes]
+    var exclusive: [ExclusiveEpisodes]
+    
     @EnvironmentObject var episodeVM: EpisodeViewModel
     @EnvironmentObject var featuredEpisodeVM: FeaturedEpisodeViewModel
+    @EnvironmentObject var exclusiveEpisodesVM: ExclusiveEpisodesViewModel
     @State private var showSheet = false
     
     var body: some View {
@@ -41,6 +44,7 @@ struct CategorySection: View {
                     TabView {
                         ForEach(featured) { item in
                             RecentShowCard(textHere: item.title, image: item.album_cover)
+                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
                                     self.showSheet = true
                                 }
@@ -53,24 +57,26 @@ struct CategorySection: View {
                 
                 CustomDivider(size: 0.5)
                 
-                // MARK: - Premium listening...
-                VStack {
-                    // ShowTitles(action: {}, title: "Premium Listening", subTitle: "Exclusive Content")
+                // MARK: - Premium listening/ Exclusive Episodes...
+                VStack(alignment: .leading, spacing: 20) {
+                    Text("Premium Listening")
+                        .font(.title3.bold())
+                        .foregroundColor(Color.theme.brand)
+                        .padding(.horizontal, 25)
                     ScrollView(.horizontal, showsIndicators: false) {
-                        
                         HStack(spacing: 15) {
-                            ForEach(episodes) { item in
+                            ForEach(exclusive) { item in
                                 SmallCard(title: item.title, image: item.album_cover)
-                                // .fullScreenCover(isPresented: $showSheet, content: { })
+                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                     .onTapGesture {
-                                        showSheet = true
+                                        self.showSheet = true
                                     }
                             }
                         }
                         .padding(.horizontal)
                     }
                 }
-                
+                .padding(.bottom)
                 
                 CustomDivider(size: 0.5)
                 
@@ -82,7 +88,7 @@ struct CategorySection: View {
                     VStack(spacing: 30) {
                         ForEach(episodes) { item in
                             EpisodeRow(title: item.title, episode: item.epispode, datePublished: item.datePublished, image: item.album_cover)
-                            // .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
                                 .onTapGesture {
                                     showSheet = true
                                 }
@@ -104,7 +110,7 @@ struct CategorySection: View {
 
 struct CategorySection_Previews: PreviewProvider {
     static var previews: some View {
-        CategorySection(episodes: Episodes.all, featured: FeaturedEpisodes.featuredEpisodes)
+        CategorySection(episodes: Episodes.all, featured: FeaturedEpisodes.featuredEpisodes, exclusive: ExclusiveEpisodes.all)
     }
 }
 

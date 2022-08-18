@@ -19,7 +19,7 @@ enum ExlusiveCategories: String, CaseIterable, Identifiable {
     case music = "Music"
 }
 
-struct ExlusiveEpisodes: Identifiable {
+struct ExclusiveEpisodes: Identifiable {
     let id = UUID()
     let title: String
     let description: String
@@ -32,9 +32,9 @@ struct ExlusiveEpisodes: Identifiable {
     let category: ExlusiveCategories.RawValue
 }
 
-extension ExlusiveEpisodes {
-    static var recentEpisodes: [ExlusiveEpisodes] = [
-        ExlusiveEpisodes(
+extension ExclusiveEpisodes {
+    static var all: [ExclusiveEpisodes] = [
+        ExclusiveEpisodes(
             title: "Online Dating",
             description: "In this day and age individuals are turning to alternate ways to dating or just to meet new people. Online dating is one such way and has been trending upwards in our society. Have you ever tried online dating? Was it a success or epic fail? Sean and Julia shares their online dating experiences from the good, the bad, and the unexpected.",
             album_cover: "https://guhso.com/wp-content/uploads/2021/08/a-couple-dating-drinking-coffee-sitting-near-the-c-R3U9CUE-scaled.jpg",
@@ -45,7 +45,7 @@ extension ExlusiveEpisodes {
             datePublished: "2020-27-10",
             category: "LifeStyle"
         ),
-        ExlusiveEpisodes(
+        ExclusiveEpisodes(
             title: "Tea or not to Tea",
             description: "Tea or not to Tea talks about some of the different types of teas we drink in the Caribbean and Latin American communities. This podcast seeks to highlight some of the most commonly consumed teas/bushes across the Caribbean diaspora for health reasons or for overall maintenance.. So take it easy and check if you can learn of a new tea or bush. Thanks for listening and come guhso!",
             album_cover: "https://guhso.com/wp-content/uploads/2021/08/a-cup-of-tea-on-the-wooden-table-tea-bag-in-glass-H8TYR8S-scaled.jpg",
@@ -56,7 +56,7 @@ extension ExlusiveEpisodes {
             datePublished: "20202-20-10",
             category: "LifeStyle"
         ),
-        ExlusiveEpisodes(
+        ExclusiveEpisodes(
             title: "Lets Talk Fashion with Kalure Beauty",
             description: "In this episode of <strong>It Guhso</strong>, Sean sits down with Mona the Ceo and one of the founders of Kalure Beauty to speak about the style choices you are missing out on. We discuss how she got started, her inspiration, and where Kalure Beauty is heading. You can head over to our page and drop your opinion about this show.",
             album_cover: "https://guhso.com/wp-content/uploads/2021/07/kalure-beauty.png",
@@ -67,7 +67,7 @@ extension ExlusiveEpisodes {
             datePublished: "2020-04-08",
             category: "Fashion"
         ),
-        ExlusiveEpisodes(
+        ExclusiveEpisodes(
             title: "Dem Woman Ya Today! With Yogi.",
              description: "In this episode of Guhso, Sean sits down with a good friend name Yogi to chat bout some of the experiences that we both had with some of the women that came in our lives. Sit back and take a listen at what we have to say and enjoy the ride. You can head over to guhso",
             album_cover: "https://guhso.com/wp-content/uploads/2021/07/girls.night_.png",
@@ -79,7 +79,7 @@ extension ExlusiveEpisodes {
             category: "Society"
 
         ),
-        ExlusiveEpisodes(
+        ExclusiveEpisodes(
             title: "When Women Vex.",
             description: "In this episode of Guhso, Sean and Juli sit down with a group of friends to speak about when women vex. What is the reason for it and what can we do when we are there with them. Now, we know you have your piece that you would like to share. You can take over to our.",
             album_cover: "https://guhso.com/wp-content/uploads/2021/08/exhaustion-X8VYWCY-scaled.jpg",
