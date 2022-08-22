@@ -68,6 +68,7 @@ struct TabBarIcon: View {
                 .font(.footnote)
             Spacer()
         }
+        .foregroundColor(viewRouter.currentPage == assignedPage ? Color.theme.brand : Color.theme.accent.opacity(0.4))
         .padding(.horizontal, 4)
         .onTapGesture {
             viewRouter.currentPage = assignedPage
