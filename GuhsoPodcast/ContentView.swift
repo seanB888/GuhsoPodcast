@@ -11,7 +11,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            Tabs()
+            // Tabs()
+            CustomTabBar(viewRouter: ViewRouter())
                 .navigationTitle("Guhso")
             // MARK: -ToolBar Section
             .toolbar {
@@ -25,7 +26,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .background(.red)
+            .background(Color.theme.background)
         }
     }
 }

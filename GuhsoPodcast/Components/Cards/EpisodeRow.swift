@@ -36,7 +36,7 @@ struct EpisodeRow: View {
                         .font(.title3.bold())
                         .foregroundColor(Color.theme.brand)
                     
-                    Text("Episode: \(season)")
+                    Text("Season: \(season)")
                         .font(.caption)
                         .foregroundColor(Color.theme.brand)
                     

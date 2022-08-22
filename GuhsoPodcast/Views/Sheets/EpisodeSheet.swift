@@ -10,6 +10,7 @@ import SwiftUI
 struct EpisodeSheet: View {
     @Environment (\.presentationMode) var presentationMode
     @State var volume: CGFloat = 0.75
+    @State private var value: Double = 0.0
     var body: some View {
         VStack {
             // MARK: - Close Button
@@ -62,36 +63,25 @@ struct EpisodeSheet: View {
                         .font(.caption)
                         
                         VStack {
-                            // Progressbar...
-                            GeometryReader { proxy in
-                                let width = proxy.frame(in: .global).width
-                                let progress = width * volume
+                            // MARK: - Play back timeline...
+                            VStack(spacing: 5) {
+                                // timeline...
+                                Slider(value: $value, in: 0...60)
+                                    .accentColor(Color.theme.brand)
+                                    
                                 
-                                ZStack(alignment: .leading) {
-                                    // background color...
-                                    Capsule()
-                                        .fill(Color.gray.opacity(0.2))
-                                        .frame(height: 4)
-                                    // foreground color...
-                                    Capsule()
-                                        .fill(Color.theme.brand)
-                                        .frame(width: progress, height: 4)
+                                
+                                HStack {
+                                    // current time...
+                                    Text("0:00")
+                                        .font(.caption2)
+                                        .foregroundColor(Color.theme.brand)
+                                    Spacer()
+                                    // remaining time...
+                                    Text("1:00")
+                                        .font(.caption2)
+                                        .foregroundColor(Color.theme.brand)
                                 }
-                                .frame(maxWidth:.infinity, alignment: .center)
-                            }
-                            // .padding(.horizontal, getRec().width < 750 ? 15 : 20)
-                            .frame(height: 20)
-                            .padding(.bottom, -10)
-                            
-                            // numbers...
-                            HStack {
-                                Text("0:00")
-                                    .font(.caption2)
-                                    .foregroundColor(Color.theme.brand)
-                                Spacer()
-                                Text("0:00")
-                                    .font(.caption2)
-                                    .foregroundColor(Color.theme.brand)
                             }
                         }
                         .padding(.top, 5)

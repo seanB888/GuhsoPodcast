@@ -25,7 +25,7 @@ struct OtherEpisodes: Identifiable {
     let description: String
     let album_cover: String
     let enclouser: String
-    let duration: Int
+    let duration: TimeInterval
     let season: Int
     let epispode: Int
     let datePublished: String
