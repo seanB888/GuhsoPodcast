@@ -11,6 +11,8 @@ struct EpisodeSheet: View {
     @Environment (\.presentationMode) var presentationMode
     @State var volume: CGFloat = 0.75
     @State private var value: Double = 0.0
+    var episodes: Episodes
+    
     var body: some View {
         VStack {
             // MARK: - Close Button
@@ -30,67 +32,69 @@ struct EpisodeSheet: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             // MARK: - Albumn Art
-            //             AsyncImage(url: URL(string: episodes.album_cover)) { image in
-            //                image
-            //                    .resizable()
-            //                    .aspectRatio(contentMode: .fill)
-            //            } placeholder: {
-            //                ProgressView()
-            //                    .progressViewStyle(CircularProgressViewStyle(tint: Color("brand")))
-            //            }
-            //            .frame(width: 350, height: 350)
-            //            .cornerRadius(30)
-            // For testing layout..
-            Rectangle()
-                .frame(width: 350, height: 350)
-                .cornerRadius(25)
-                .overlay {
-                    Image("logoorange")
+            VStack {
+                AsyncImage(url: URL(string: episodes.album_cover)) { image in
+                    image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 250)
-                        .offset(y: -35)
-                    
-                    VStack(alignment: .leading) {
-                        Text("How To Study")
-                            .lineLimit(1)
-                            .font(.title)
-                        
-                        HStack {
-                            Text("Hosted by:")
-                            Text("Nadine")
-                        }
-                        .font(.caption)
-                        
-                        VStack {
-                            // MARK: - Play back timeline...
-                            VStack(spacing: 5) {
-                                // timeline...
-                                Slider(value: $value, in: 0...60)
-                                    .accentColor(Color.theme.brand)
-                                    
-                                
+                        .aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    Rectangle()
+                        .frame(width: 350, height: 350)
+                        .cornerRadius(25)
+                        .overlay {
+                            Image("logoorange")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 250)
+                                .offset(y: -35)
+                            
+                            VStack(alignment: .leading) {
+                                Text("How To Study")
+                                    .lineLimit(1)
+                                    .font(.title)
                                 
                                 HStack {
-                                    // current time...
-                                    Text("0:00")
-                                        .font(.caption2)
-                                        .foregroundColor(Color.theme.brand)
-                                    Spacer()
-                                    // remaining time...
-                                    Text("1:00")
-                                        .font(.caption2)
-                                        .foregroundColor(Color.theme.brand)
+                                    Text("Hosted by:")
+                                    Text("Nadine")
+                                }
+                                .font(.caption)
+                            }
+                            .frame(width: 350, height: 350)
+                            .cornerRadius(30)
+                            
+                            // For testing layout..
+                            VStack {
+                                // MARK: - Play back timeline...
+                                VStack(spacing: 5) {
+                                    // timeline...
+                                    Slider(value: $value, in: 0...60)
+                                        .accentColor(Color.theme.brand)
+                                    
+                                    
+                                    
+                                    HStack {
+                                        // current time...
+                                        Text("0:00")
+                                            .font(.caption2)
+                                            .foregroundColor(Color.theme.brand)
+                                        Spacer()
+                                        // remaining time...
+                                        Text("1:00")
+                                            .font(.caption2)
+                                            .foregroundColor(Color.theme.brand)
+                                    }
                                 }
                             }
+                            .padding(.top, 5)
                         }
-                        .padding(.top, 5)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                    .padding(.horizontal, 25)
-                    .foregroundColor(Color.theme.brand)
-                    .padding(.bottom)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                        .padding(.horizontal, 25)
+                        .foregroundColor(Color.theme.brand)
+                        .padding(.bottom)
                 }
+            .padding()
+            }
+            .padding(.horizontal, 20)
             
             
             // MARK: - Slider
@@ -131,6 +135,6 @@ struct EpisodeSheet: View {
 
 struct EpisodeSheet_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeSheet()
+        EpisodeSheet(episodes: Episodes.all[0])
     }
 }

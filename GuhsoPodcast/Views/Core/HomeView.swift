@@ -33,7 +33,11 @@ struct HomeView: View {
                                 .foregroundColor(.white)
                             
                             Spacer()
-                            NavigationLink(destination: { CategorySection(episodes: Episodes.all, featured: FeaturedEpisodes.featuredEpisodes, exclusive: ExclusiveEpisodes.all)}) {
+                            NavigationLink(destination: {
+                                CategorySection(episodes: Episodes.all,
+                                                featured: FeaturedEpisodes.featuredEpisodes,
+                                                exclusive: ExclusiveEpisodes.all)})
+                            {
                                 Text("See All")
                                     .font(.caption)
                                     .foregroundColor(Color.theme.brand)
@@ -47,35 +51,40 @@ struct HomeView: View {
                             
                             // Other Shows...
                             ForEach(otherEpisodes) { index in
-                                AsyncImage(url: URL(string: index.album_cover)) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 200, height: 150)
-                                        .cornerRadius(10)
-                                        .overlay(
-                                            Text(index.title)
-                                                .fontWeight(.bold)
-                                                .lineLimit(1)
-                                                .foregroundColor(Color.theme.brand)
-                                                .offset(y: 30)
-                                                .padding(.horizontal)
-                                        )
-                                } placeholder: {
-                                    Rectangle()
-                                        .fill(Color.black)
-                                        .overlay{
-                                            Text(index.title)
-                                                .foregroundColor(Color.theme.brand)
-                                                .lineLimit(1)
-                                                .padding(.horizontal, 25)
-                                        }
-                                }
-                                .frame(height: 150)
-                                .cornerRadius(10)
-                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
-                                .onTapGesture {
-                                    self.showSheet = true
+                                GeometryReader { proxy in
+                                    AsyncImage(url: URL(string: index.album_cover)) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: proxy.size.width/1.2, height: proxy.size.height/1.2)
+                                            .cornerRadius(10)
+                                            .overlay(
+                                                Text(index.title)
+                                                    .fontWeight(.bold)
+                                                    .lineLimit(1)
+                                                    .foregroundColor(Color.theme.brand)
+                                                    .offset(y: 30)
+                                                    .padding(.horizontal)
+                                            )
+                                    } placeholder: {
+                                        Rectangle()
+                                            .fill(Color.black)
+                                            .overlay{
+                                                Text(index.title)
+                                                    .foregroundColor(Color.theme.brand)
+                                                    .lineLimit(1)
+                                                    .padding(.horizontal, 25)
+                                            }
+                                    }
+                                    .frame(height: 150)
+                                    .cornerRadius(10)
+                                    .fullScreenCover(
+                                        isPresented: $showSheet,
+                                        content: { Player() }
+                                    )
+                                    .onTapGesture {
+                                        self.showSheet = true
+                                    }
                                 }
                             }
                         })

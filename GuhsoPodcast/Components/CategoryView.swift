@@ -25,7 +25,7 @@ struct CategoryView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(episodes) { item in
-                        CategoryButton(categoryTitle: item.category)
+                        CategoryButton(categoryTitle: item.category.uppercased())
                     }
                 }
                 .padding(.horizontal)

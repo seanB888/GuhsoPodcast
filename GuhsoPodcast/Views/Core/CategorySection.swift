@@ -44,7 +44,7 @@ struct CategorySection: View {
                     TabView {
                         ForEach(featured) { item in
                             RecentShowCard(textHere: item.title, image: item.album_cover)
-                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet(episodes: Episodes.all[0]) })
                                 .onTapGesture {
                                     self.showSheet = true
                                 }
@@ -67,7 +67,7 @@ struct CategorySection: View {
                         HStack(spacing: 15) {
                             ForEach(exclusive) { item in
                                 SmallCard(title: item.title, image: item.album_cover)
-                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet(episodes: Episodes.all[0]) })
                                     .onTapGesture {
                                         self.showSheet = true
                                     }
@@ -88,7 +88,7 @@ struct CategorySection: View {
                     VStack(spacing: 30) {
                         ForEach(episodes) { item in
                             EpisodeRow(title: item.title, season: item.season, episode: item.epispode, datePublished: item.datePublished, image: item.album_cover)
-                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                                .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet(episodes: Episodes.all[0]) })
                                 .onTapGesture {
                                     showSheet = true
                                 }

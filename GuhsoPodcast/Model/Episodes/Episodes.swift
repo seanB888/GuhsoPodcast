@@ -216,7 +216,7 @@ extension Episodes {
             season: 1,
             epispode: 3,
             datePublished: "2020-04-08",
-            category: "Culture"
+            category: "Energy"
         ),
         Episodes(
             title: "Tea Or Not To Tea",

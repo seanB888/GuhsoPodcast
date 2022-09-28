@@ -27,10 +27,10 @@ struct CustomTabBar: View {
                 }
                 Spacer()
                 HStack {
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: proxy.size.width/5, height: proxy.size.height/45, icon: "house.fill", tabName: "Home")
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .explore, width: proxy.size.width/5, height: proxy.size.height/45, icon: "rectangle.3.group.fill", tabName: "Explore")
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .directory, width: proxy.size.width/5, height: proxy.size.height/45, icon: "book.fill", tabName: "Dictionary")
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .profile, width: proxy.size.width/5, height: proxy.size.height/45, icon: "person.fill", tabName: "Profile")
+                    TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: proxy.size.width/5, height: proxy.size.height/45, icon: "house.fill", tabName: "Home", count: 0)
+                    TabBarIcon(viewRouter: viewRouter, assignedPage: .explore, width: proxy.size.width/5, height: proxy.size.height/45, icon: "rectangle.3.group.fill", tabName: "Explore", count: 3)
+                    TabBarIcon(viewRouter: viewRouter, assignedPage: .directory, width: proxy.size.width/5, height: proxy.size.height/45, icon: "book.fill", tabName: "Directory", count: 0)
+                    TabBarIcon(viewRouter: viewRouter, assignedPage: .profile, width: proxy.size.width/5, height: proxy.size.height/45, icon: "person.fill", tabName: "Profile", count: 0)
                 }
                 .frame(width: proxy.size.width, height: proxy.size.height/10)
                 .foregroundColor(Color.theme.brand)
@@ -55,17 +55,32 @@ struct TabBarIcon: View {
     
     let width, height: CGFloat
     let icon, tabName: String
+    var count: Int
     
     var body: some View {
-        VStack {
-            Image(systemName: icon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: width, height: height)
-                .padding(.top, 15)
-                
-            Text(tabName)
-                .font(.footnote)
+        ZStack {
+            VStack {
+                Image(systemName: icon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: width, height: height)
+                    .padding(.top, 15)
+                    
+                Text(tabName)
+                    .font(.footnote)
+            }
+            
+            // Custom badge...
+            if count > 0 {
+                Text("\(count)")
+                    .font(.caption.bold())
+                    .foregroundColor(.white)
+                    .frame(width: 15, height: 15)
+                    .padding(2)
+                    .background(.red)
+                    .clipShape(Circle())
+                .offset(x: 15,y: -15)
+            }
             Spacer()
         }
         .foregroundColor(viewRouter.currentPage == assignedPage ? Color.theme.brand : Color.theme.accent.opacity(0.4))

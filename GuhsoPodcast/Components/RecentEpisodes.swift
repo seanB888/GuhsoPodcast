@@ -33,11 +33,11 @@ struct RecentEpisodes: View {
                         hostName: (item.datePublished),
                         coverImage: item.album_cover
                     )
-                    .fullScreenCover(isPresented: $showSheet, content: { EpisodeSheet() })
+                    // EpisodeSheet(episodes: Episodes.all[0])
+                    .fullScreenCover(isPresented: $showSheet, content: { Player() })
                     .onTapGesture {
                         showSheet = true
                     }
-                    
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .automatic))

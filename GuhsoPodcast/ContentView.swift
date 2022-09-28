@@ -21,9 +21,11 @@ struct ContentView: View {
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     HStack {
-                        CartButton()
+                        
+                        CartButton(count: 2)
                         ProfileButton()
                     }
+                    .padding(.bottom, 10)
                 }
             }
             .background(Color.theme.background)
